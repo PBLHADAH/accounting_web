@@ -6,7 +6,8 @@ hanip, maulana, alfin, holil, rizaldy, dana.
 https://1drv.ms/x/s!AimyVrapEnuKglyMcogvNbtCgsku?e=ktQRSX
 3. ERD ✅
 4. DDL ✅
-5. Flowchart ❌
+5. Flowchart ✅
+https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
 6. Figma ❌
 7. Front end ❌
 8. Back end ❌
