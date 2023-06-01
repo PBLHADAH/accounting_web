@@ -1,6 +1,6 @@
 # accounting_web
 This is an accounting website for aldyz cell made with framework-less PHP. Made by students of State Polytechnic of Banyuwangi.
-hanip, maulana, alfin, holil, rizaldy, dana
+hanip, maulana, alfin, holil, rizaldy, dana tjujutujt
 ## TO DO LIST:
 1. Normalisasi ✅
 https://1drv.ms/x/s!AimyVrapEnuKglyMcogvNbtCgsku?e=ktQRSX
