@@ -1,5 +1,5 @@
 # accounting_web
-This is an accounting website made with framework-less PHP. Made by students of State Polytechnic of Banyuwangi.
+This is an accounting website for aldyz cell made with framework-less PHP. Made by students of State Polytechnic of Banyuwangi.
 hanip, maulana, alfin, holil, rizaldy, dana
 ## TO DO LIST:
 1. Normalisasi ✅
