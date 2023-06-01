@@ -46,6 +46,6 @@ https://1drv.ms/x/s!AimyVrapEnuKglyMcogvNbtCgsku?e=ktQRSX
    4. Delete produk ❌
 7. Pengelolaan pegawai ❌
    1. Tabel pegawai ❌
-   2. Create pegawai ❌
+   2. Create pegawai ✅
    3. Edit pegawai ❌
    4. Delete pegawai ❌
