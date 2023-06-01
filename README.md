@@ -11,6 +11,7 @@ https://1drv.ms/x/s!AimyVrapEnuKglyMcogvNbtCgsku?e=ktQRSX
 7. Front end ❌
 8. Back end ❌
 9. Rpp ❌
+10. Laporan Akhir ❌
 
 
 ## TO DO LIST CODINGAN:
