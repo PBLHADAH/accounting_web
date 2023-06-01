@@ -19,7 +19,7 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
 1. Login ❌
    1. Login ke database ✅
    2. Session ❌
-2. Index ❌
+2. Index [Hanif Semua] ❌
    1. Navigasi ❌
    2. Tabel Penjualan ❌
    3. Tabel Perkulakan ❌
