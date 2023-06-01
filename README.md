@@ -16,7 +16,7 @@ https://1drv.ms/x/s!AimyVrapEnuKglyMcogvNbtCgsku?e=ktQRSX
 ## TO DO LIST CODINGAN:
 1. Login ❌
    1. Login ke database ✅
-   2. Session
+   2. Session ❌
 2. Index ❌
    1. Navigasi ❌
    2. Tabel Penjualan ❌
