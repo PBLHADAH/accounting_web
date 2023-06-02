@@ -25,7 +25,7 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    .main_box {}
+    /* .main_box {} */
 
     .main_box .sidebar_menu {
       position: fixed;
@@ -155,7 +155,7 @@
     /* css table */
     .container {
       text-align: center;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -194,6 +194,8 @@
       font-size: 24px;
       margin-bottom: 20px;
     }
+/* batas styling css */
+
 
 /* styling .logout-icon */
 #logout-btn {
@@ -220,6 +222,27 @@
 /* styling searching */
 /* kurang styling searching */
 /* batas styling searching */
+
+/* styling footer copyright */
+.copyright {
+          text-align: center;
+          font-size: 14px;
+          color: #555;
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #f7f7f7;
+          border-top: 1px solid #ddd;
+        }
+        
+        .copyright a {
+          color: #555;
+          text-decoration: none;
+        }
+        
+        .copyright a:hover {
+          text-decoration: underline;
+        }
+/* batas footer */
  </style>
 
 </head>
@@ -241,7 +264,7 @@
       </div>
 
       <div class="menu">
-        <!-- icon -->
+        <!-- icon side bar kiri -->
         <ul>
           <li><i class="fa-regular fa-user"></i><a href="#">Admin</a></li>
           <li><i class="fa-solid fa-house"></i><a href="#">Home</a></li>
@@ -263,12 +286,6 @@
       </div>
     </div>
   </div>
-
-
-  <!-- Searching -->
-  <!-- kurang kodingan searching -->
-  <!-- batas searching -->
-   
 
   <!-- Landing page  dan tabel -->
   <div class="container">
@@ -359,5 +376,13 @@
       </div>
     </div>
 
-</body>
+    <!-- footer -->
+    <footer>
+        <div class="copyright">
+            &copy; 2023 My Website. All rights reserved. | Created by <a href="#">Kelompok 1 <i class="fa-solid fa-heart"></i></a>
+        </div>
+    </footer>
+    <!-- batas footer -->
+
+  </body>
 </html>
