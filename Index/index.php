@@ -242,58 +242,15 @@
   <!-- Landing page  dan tabel -->
   <div class="container">
     <h1>Daftar Produk</h1>
-
+    <?php require '../produk/tabel_produk.php'?>
     <!-- tabel -->
-    <table>
-      <thead>
-        <tr>
-          <th>Nama Produk</th>
-          <th>Harga Produk</th>
-          <th>Supplier</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>John Doe</td>
-          <td>25</td>
-          <td>New York</td>
-        </tr>
-        <tr>
-          <td>Jane Smith</td>
-          <td>30</td>
-          <td>London</td>
-        </tr>
-        <tr>
-          <td>Mark Johnson</td>
-          <td>35</td>
-          <td>Tokyo</td>
-        </tr>
-      </tbody>
-    </table>
 
     <!-- Landing page  dan tabel -->
     <div class="container">
-      <h1>Daftar Transaksi Lainnya</h1>
-
-      <!-- tabel -->
-      <table>
-        <thead>
-          <tr>
-            <th>Deskripsi</th>
-            <th>Tanggal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>Jane Smith</td>
-            <td>30</td>
-          </tr>
-        </tbody>
-      </table>
+    <h1>Transaksi</h1>
+      <?php
+      require "../transaksi_lainnya/tabel_transaksi_lainnya.php"
+      ?>
     </div>
 
 
@@ -331,6 +288,8 @@
       <div class="container">
         <h1>Daftar Transaksi Perkulakan</h1>
 
+        
+     
         <!-- tabel -->
         <table>
           <thead>

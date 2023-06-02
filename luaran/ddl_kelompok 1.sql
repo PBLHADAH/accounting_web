@@ -83,6 +83,7 @@ CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_perkulakan` (
 CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_lainnya` (
   `id_transaksi_lainnya` INT NOT NULL AUTO_INCREMENT,
   `deskripsi` VARCHAR(255) NULL DEFAULT NULL,
+  `nominal` INT NOT NULL,
   `pegawai_id_pegawai` INT NOT NULL,
   `tanggal` DATETIME NOT NULL,
   PRIMARY KEY (`id_transaksi_lainnya`),

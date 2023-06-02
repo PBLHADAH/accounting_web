@@ -36,17 +36,17 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
    2. Create perkulakan ❌
    3. Edit perkulakan ❌
    4. Delete perkulakan ❌
-5. Pengelolaan Transaksi lainnya [Holil]❌
-   1. Tabel lainnya ❌
-   2. Create lainnya ❌
-   3. Edit lainnya ❌
-   4. Delete lainnya ❌
-6. Pengelolaan produk [Alfin]❌
-   1. Tabel produk ❌
-   2. Create produk ❌
-   3. Edit produk ❌
-   4. Delete produk ❌
-7. Pengelolaan pegawai [Aldi]❌
+5. Pengelolaan Transaksi lainnya [Holil]✅
+   1. Tabel lainnya ✅
+   2. Create lainnya ✅
+   3. Edit lainnya ✅
+   4. Delete lainnya ✅
+6. Pengelolaan produk [Alfin]✅
+   1. Tabel produk ✅
+   2. Create produk ✅
+   3. Edit produk ✅
+   4. Delete produk ✅
+7. Pengelolaan pegawai [Aldi]✅
    1. Tabel pegawai ✅
    2. Create pegawai ✅
    3. Read pegawai ✅

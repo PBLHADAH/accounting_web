@@ -58,9 +58,4 @@ $result = $conn->query($query);
 </body>
 </html>
 
-<?php
-// Close the result set and database connection
-$result->close();
-$conn->close();
 
-?>
