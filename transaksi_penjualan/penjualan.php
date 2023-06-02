@@ -26,11 +26,47 @@ $result = $conn->query($sql);
 			background-color: #353A40;
 			color: white;
 		}
+    .add-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .add-link:hover {
+            background-color: #45a049;
+        }
+        /* Style untuk judul dan tautan */
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .add-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2268EF;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .add-link:hover {
+            background-color: #45a049;
+        }
+        /* Style untuk judul dan tautan */
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 	</style>
 </head>
 <body>
-    <h2>Transactions</h2>
-    <a href="">tambah_penjualan</a>
+    <div class="header-container">
+        <h2>Penjualan</h2>
+        <a href="" class="add-link">Tambah Penjualan</a>
+    </div>
     <table>
         <thead>
             <tr>
@@ -59,6 +95,7 @@ $result = $conn->query($sql);
                 echo "</td>";
                 echo "</tr>";
             }
+
             ?>
         </tbody>
     </table>
