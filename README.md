@@ -50,4 +50,5 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
    1. Tabel pegawai ✅
    2. Create pegawai ✅
    3. Read pegawai ✅
-   4. Delete pegawai❌
+   4. Update pegawai ✅
+   5. Delete pegawai✅
