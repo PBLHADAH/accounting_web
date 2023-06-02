@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
 
 <head>
@@ -8,6 +7,8 @@
   <title>Aldy'z Cell</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  
+  <!-- kodingan css -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
@@ -19,11 +20,7 @@
     }
 
     .main_box {
-      position: relative;
-      background: url('side.jpeg') right no-repeat;
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
+     
     }
 
     .main_box .sidebar_menu {
@@ -150,6 +147,38 @@
     #check:checked~.sidebar_menu .btn_two i {
       opacity: 1;
     }
+
+    /* css table */
+    .container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
   </style>
 
 </head>
@@ -172,6 +201,7 @@
         </label>
       </div>
       <div class="menu">
+        <!-- icon -->
         <ul>
           <li><i class="fas fa-qrcode"></i><a href="#">Admin</a></li>
           <li><i class="fas fa-link"></i><a href="#">Index Utama</a></li>
@@ -180,6 +210,8 @@
           <li><i class="fas fa-question-circle"></i><a href="#">Kelola Produk</a></li>
         </ul>
       </div>
+      
+      <!-- social media -->
       <div class="social_media">
         <ul>
           <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -191,6 +223,105 @@
     </div>
   </div>
 
+  <!-- Landing page  dan tabel -->
+  <div class="container">
+  <h1>Hasil Daftar Pegawai</h1> <br>
+
+  <!-- tabel -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>25</td>
+        <td>New York</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>30</td>
+        <td>London</td>
+      </tr>
+      <tr>
+        <td>Mark Johnson</td>
+        <td>35</td>
+        <td>Tokyo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Landing page  dan tabel -->
+<div class="container">
+  <h1>Hasil Daftar Transaksi</h1> <br>
+
+  <!-- tabel -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>25</td>
+        <td>New York</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>30</td>
+        <td>London</td>
+      </tr>
+      <tr>
+        <td>Mark Johnson</td>
+        <td>35</td>
+        <td>Tokyo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Landing page  dan tabel -->
+<div class="container">
+  <h1>Hasil Daftar Produk</h1> <br>
+
+  <!-- tabel -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>25</td>
+        <td>New York</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>30</td>
+        <td>London</td>
+      </tr>
+      <tr>
+        <td>Mark Johnson</td>
+        <td>35</td>
+        <td>Tokyo</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 </body>
+
 </html>
