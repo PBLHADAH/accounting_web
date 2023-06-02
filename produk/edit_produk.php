@@ -1,14 +1,5 @@
 <?php
-// Ubah variabel koneksi ke database sesuai dengan konfigurasi Anda
 require 'koneksi.php';
-
-// Membuat koneksi ke database
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Memeriksa koneksi database
-if (!$conn) {
-    die("Koneksi database gagal: " . mysqli_connect_error());
-}
 
 // Periksa apakah parameter id_produk diterima melalui URL
 if (isset($_GET['id_produk'])) {

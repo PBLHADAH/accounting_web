@@ -1,12 +1,9 @@
 <?php
+require 'koneksi.php';
 if (isset($_POST['delete'])) {
   $id_produk = $_POST['id_produk'];
 
   // Koneksi ke database
-  require 'koneksi.php';
-
-  // Membuat koneksi ke database
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
 
   // Memeriksa koneksi database
   if (!$conn) {

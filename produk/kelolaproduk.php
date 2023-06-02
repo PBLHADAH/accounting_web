@@ -11,14 +11,6 @@
   // Koneksi ke database
   require 'koneksi.php';
 
-  // Membuat koneksi ke database
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-  // Memeriksa koneksi database
-  if (!$conn) {
-    die("Koneksi database gagal: " . mysqli_connect_error());
-  }
-
   // Query untuk mendapatkan data semua produk
   $sql = "SELECT * FROM produk";
   $result = mysqli_query($conn, $sql);
