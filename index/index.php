@@ -50,8 +50,7 @@
                     </div>
                 </nav>
 
-                <!-- Ini codingan table -->
-                <!-- Page content-->
+                <!-- Ini codingan table Pegawai(Page Content) -->
                 <div class="container-fluid">
                     <h1 class="mt-4">Hasil Daftar Pegawai  </h1>
                     
@@ -116,8 +115,10 @@
     </tr>
   </tbody>
 </table>
+<!-- batas akhir codingan daftar Pegawai -->
 
 
+<!-- Codingan Table Transaksi -->
 <div class="container-fluid">
                     <h1 class="mt-4">Hasil Daftar Transaksi</h1>
                     
@@ -182,7 +183,9 @@
     </tr>
   </tbody>
 </table>
+<!-- batas kodingan table Transaksi -->
 
+<!-- Codingan Table Produk-->
 <div class="container-fluid">
                     <h1 class="mt-4">Hasil Daftar Produk</h1>
                     
@@ -247,10 +250,15 @@
     </tr>
   </tbody>
 </table>
-
+<!-- batas kodingan table daftar produk -->
 
 
 <!-- codingan php -->
+<?php
+
+
+?>
+<!-- batas codingan php -->
 
                 </div>
             </div>
