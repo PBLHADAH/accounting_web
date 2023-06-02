@@ -27,7 +27,7 @@
       position: fixed;
       height: 100vh;
       width: 280px;
-      left: -280px;
+      left: 0px;
       background: #1e1e1e;
       box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
       overflow: hidden;
