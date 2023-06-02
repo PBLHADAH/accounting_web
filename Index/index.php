@@ -25,8 +25,6 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    /* .main_box {} */
-
     .main_box .sidebar_menu {
       position: fixed;
       height: 100vh;
@@ -194,56 +192,55 @@
       font-size: 24px;
       margin-bottom: 20px;
     }
-/* batas styling css */
+
+    /* batas styling css */
 
 
-/* styling .logout-icon */
-#logout-btn {
-  border: none;
-  background-color: red;
-  color: #fff;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
+    /* styling .logout-icon */
+    #logout-btn {
+      border: none;
+      background-color: red;
+      color: #fff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
 
-.logout-icon {
-  margin-right: none;
-}
+    .logout-icon {
+      margin-right: none;
+    }
 
-#logout-btn:hover {
-  color: #ff0000;
-}
-/* batas styling logout */
+    #logout-btn:hover {
+      color: #ff0000;
+    }
 
-/* styling searching */
-/* kurang styling searching */
-/* batas styling searching */
+    /* batas styling logout */
 
-/* styling footer copyright */
-.copyright {
-          text-align: center;
-          font-size: 14px;
-          color: #555;
-          margin-top: 20px;
-          padding: 10px;
-          background-color: #f7f7f7;
-          border-top: 1px solid #ddd;
-        }
-        
-        .copyright a {
-          color: #555;
-          text-decoration: none;
-        }
-        
-        .copyright a:hover {
-          text-decoration: underline;
-        }
-/* batas footer */
- </style>
+    /* styling footer copyright */
+    .copyright {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f7f7f7;
+      border-top: 1px solid #ddd;
+    }
+
+    .copyright a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    /* batas footer */
+  </style>
 
 </head>
 
@@ -277,11 +274,11 @@
       <!-- Logout -->
       <div class="social_media">
         <ul>
-        <button id="logout-btn">
-      <span class="logout-icon"></span>
-      <i class="fa-solid fa-right-from-bracket"></i>
-      Logout
-      </button>
+          <button id="logout-btn">
+            <span class="logout-icon"></span>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </button>
         </ul>
       </div>
     </div>
@@ -293,7 +290,7 @@
 
     <!-- tabel -->
     <?php require '../pegawai/tabel_pegawai.php'; ?>
-      
+
   </div>
 
   <!-- Landing page  dan tabel -->
@@ -304,7 +301,7 @@
 
     <!-- Landing page  dan tabel -->
     <div class="container">
-    <h1>Transaksi</h1>
+      <h1>Transaksi</h1>
       <?php require '../transaksi_lainnya/tabel_transaksi_lainnya.php'; ?>
     </div>
 
@@ -343,8 +340,7 @@
       <div class="container">
         <h1>Daftar Transaksi Perkulakan</h1>
 
-        
-     
+
         <!-- tabel -->
         <table>
           <thead>
@@ -378,11 +374,26 @@
 
     <!-- footer -->
     <footer>
-        <div class="copyright">
-            &copy; 2023 My Website. All rights reserved. | Created by <a href="#">Kelompok 1 <i class="fa-solid fa-heart"></i></a>
-        </div>
+      <div class="copyright">
+        &copy; 2023 My Website. All rights reserved. | Created by <a href="#">Kelompok 1 <i class="fa-solid fa-heart"></i></a>
+      </div>
     </footer>
     <!-- batas footer -->
 
-  </body>
+    <!-- javascript -->
+    <script>
+      // JavaScript untuk memperindah tampilan elemen pembantu
+      const heartIcon = document.querySelector('.fa-heart');
+
+      // Menambahkan efek animasi ketika kursor diarahkan ke ikon hati
+      heartIcon.addEventListener('mouseover', function() {
+        this.style.color = 'red';
+      });
+      heartIcon.addEventListener('mouseout', function() {
+        this.style.color = '';
+      });
+    </script>
+
+</body>
+
 </html>
