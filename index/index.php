@@ -51,7 +51,7 @@
                 </nav>
                 <!-- Page content-->
                 <div class="container-fluid">
-                    <h1 class="mt-4">index</h1>
+                    <h1 class="mt-4">Hasil Daftar Pegawai  </h1>
                     
                     <table class="sales-table">
                     <style>
@@ -115,6 +115,7 @@
   </tbody>
 </table>
 
+<!-- codingan php -->
 
                 </div>
             </div>
