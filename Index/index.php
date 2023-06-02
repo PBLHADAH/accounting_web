@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aldy'z Cell</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <!-- kodingan css -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -195,19 +196,15 @@ tr:hover {
       <div class="logo">
         <a href="#">Aldy'z Cell</a>
       </div>
-      <div class="btn_two">
-        <label for="check">
-          <i class="fas fa-times"></i>
-        </label>
-      </div>
+      
       <div class="menu">
         <!-- icon -->
         <ul>
-          <li><i class="fas fa-qrcode"></i><a href="#">Admin</a></li>
-          <li><i class="fas fa-link"></i><a href="#">Index Utama</a></li>
-          <li><i class="fas fa-stream"></i><a href="#">Kelola Pegawai</a></li>
-          <li><i class="fas fa-calendar-week"></i><a href="#">Kelola Transaksi</a></li>
-          <li><i class="fas fa-question-circle"></i><a href="#">Kelola Produk</a></li>
+          <li><i class="fa-regular fa-user"></i><a href="#">Admin</a></li>
+          <li><i class="fa-solid fa-house"></i><a href="#">Home</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="#">Kelola Pegawai</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="#">Kelola Transaksi</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="#">Kelola Produk</a></li>
         </ul>
       </div>
       
