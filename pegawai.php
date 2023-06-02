@@ -1,3 +1,6 @@
+<?php 
+    require 'tabel_pegawai.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +30,6 @@
 <?php
 // Establish a connection to the database
 require 'koneksi.php';
-
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the entered username and password
@@ -58,5 +60,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn->close();
+$conn->close(); 
 ?>
