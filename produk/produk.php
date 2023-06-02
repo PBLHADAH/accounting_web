@@ -9,7 +9,7 @@
 
   <?php
   // Koneksi ke database
-  require 'koneksi.php';
+  require '../koneksi.php';
 
   // Query untuk mendapatkan data semua produk
   $sql = "SELECT * FROM produk";
@@ -26,7 +26,7 @@
       echo "<td>" . $row['nama_produk'] . "</td>";
       echo "<td>" . $row['harga_produk'] . "</td>";
       echo "<td>" . $row['supplier'] . "</td>";
-      echo "<td><a href='edit_produk.php?id_produk=" . $row['id_produk'] . "'>Edit</a> | ";
+      echo "<td><a href='update_produk.php?id_produk=" . $row['id_produk'] . "'>Edit</a> | ";
       echo "<form method='POST' action='delete_produk.php'>";
       echo "<input type='hidden' name='id_produk' value='" . $row['id_produk'] . "'>";
       echo "<input type='submit' name='delete' value='Hapus'></form></td>";
