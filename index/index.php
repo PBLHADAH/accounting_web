@@ -49,6 +49,8 @@
                         </div>
                     </div>
                 </nav>
+
+                <!-- Ini codingan table -->
                 <!-- Page content-->
                 <div class="container-fluid">
                     <h1 class="mt-4">Hasil Daftar Pegawai  </h1>
