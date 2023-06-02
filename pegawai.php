@@ -1,3 +1,6 @@
+<?php 
+    require 'tabel_pegawai_detail.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +9,7 @@
 </head>
 <body>
     <h2>Register</h2>
-    <form method="POST" action="register.php">
+    <form method="POST" action="pegawai.php">
         <label>Nama Lengkap:</label>
         <input type="text" name="nama_lengkap" required><br><br>
         <label>No Hp:</label>
@@ -19,6 +22,10 @@
         <input type="password" id="password" name="password" required><br><br>
         <label for="password">Konfirmasi password:</label>
         <input type="password" name="konfirmasi" required><br><br>
+        <select name="jabatan">
+            <option value="pegawai">Pegawai</option>
+            <option value="manajer">Manajer</option>
+        </select><br><br>
         <input type="submit" value="Register">
     </form>
     <a href="login.php">Login</a>
@@ -27,7 +34,6 @@
 <?php
 // Establish a connection to the database
 require 'koneksi.php';
-
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the entered username and password
@@ -46,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($password == $konfirmasi){
             $sql = "INSERT INTO pegawai (username, password, nama, alamat, no_hp) VALUES ('$username', '$hashedPassword', '$nama_lengkap', '$alamat', $no_hp)";
             $conn->query($sql);
-            header("Location: login.php");
+            // header("Location: login.php");
             exit();
         } else{
             echo "<h2>Password tidak sesuai!</h2>";
@@ -58,5 +64,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$conn->close();
+$conn->close(); 
 ?>
