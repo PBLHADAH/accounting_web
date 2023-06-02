@@ -115,6 +115,139 @@
   </tbody>
 </table>
 
+
+<div class="container-fluid">
+                    <h1 class="mt-4">Hasil Daftar Transaksi</h1>
+                    
+                    <table class="sales-table">
+                    <style>
+  table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama Produk</th>
+      <th>Jumlah Terjual</th>
+      <th>Harga Satuan</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Produk A</td>
+      <td>10</td>
+      <td>Rp 10,000</td>
+      <td>Rp 100,000</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Produk B</td>
+      <td>5</td>
+      <td>Rp 20,000</td>
+      <td>Rp 100,000</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Produk C</td>
+      <td>8</td>
+      <td>Rp 15,000</td>
+      <td>Rp 120,000</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container-fluid">
+                    <h1 class="mt-4">Hasil Daftar Produk</h1>
+                    
+                    <table class="sales-table">
+                    <style>
+  table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama Produk</th>
+      <th>Jumlah Terjual</th>
+      <th>Harga Satuan</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Produk A</td>
+      <td>10</td>
+      <td>Rp 10,000</td>
+      <td>Rp 100,000</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Produk B</td>
+      <td>5</td>
+      <td>Rp 20,000</td>
+      <td>Rp 100,000</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Produk C</td>
+      <td>8</td>
+      <td>Rp 15,000</td>
+      <td>Rp 120,000</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 <!-- codingan php -->
 
                 </div>
