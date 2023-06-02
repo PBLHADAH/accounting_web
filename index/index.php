@@ -1,289 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Index Utama</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="d-flex" id="wrapper">
-            <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light">Aldyz Cell</div>
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
-                </div>
-            </div>
-            <!-- Page content wrapper-->
-            <div id="page-content-wrapper">
-                <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <div class="container-fluid">
-                        <button class="btn btn-primary" id="sidebarToggle">=</button>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#!">Action</a>
-                                        <a class="dropdown-item" href="#!">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#!">Something else here</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
 
-                <!-- Ini codingan table Pegawai(Page Content) -->
-                <div class="container-fluid">
-                    <h1 class="mt-4">Hasil Daftar Pegawai  </h1>
-                    
-                    <table class="sales-table">
-                    <style>
-  table {
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #ddd;
-  }
-</style>
+<html lang="en" dir="ltr">
 
-<table>
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>Nama Produk</th>
-      <th>Jumlah Terjual</th>
-      <th>Harga Satuan</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Produk A</td>
-      <td>10</td>
-      <td>Rp 10,000</td>
-      <td>Rp 100,000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Produk B</td>
-      <td>5</td>
-      <td>Rp 20,000</td>
-      <td>Rp 100,000</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Produk C</td>
-      <td>8</td>
-      <td>Rp 15,000</td>
-      <td>Rp 120,000</td>
-    </tr>
-  </tbody>
-</table>
-<!-- batas akhir codingan daftar Pegawai -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Layout | CodingLab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-<!-- Codingan Table Transaksi -->
-<div class="container-fluid">
-                    <h1 class="mt-4">Hasil Daftar Transaksi</h1>
-                    
-                    <table class="sales-table">
-                    <style>
-  table {
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #ddd;
-  }
-</style>
+    .main_box {
+      position: relative;
+      background: url('side.jpeg') right no-repeat;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+    }
 
-<table>
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>Nama Produk</th>
-      <th>Jumlah Terjual</th>
-      <th>Harga Satuan</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Produk A</td>
-      <td>10</td>
-      <td>Rp 10,000</td>
-      <td>Rp 100,000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Produk B</td>
-      <td>5</td>
-      <td>Rp 20,000</td>
-      <td>Rp 100,000</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Produk C</td>
-      <td>8</td>
-      <td>Rp 15,000</td>
-      <td>Rp 120,000</td>
-    </tr>
-  </tbody>
-</table>
-<!-- batas kodingan table Transaksi -->
+    .main_box .sidebar_menu {
+      position: fixed;
+      height: 100vh;
+      width: 280px;
+      left: -280px;
+      background: #1e1e1e;
+      box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+      transition: all 0.3s linear;
+    }
 
-<!-- Codingan Table Produk-->
-<div class="container-fluid">
-                    <h1 class="mt-4">Hasil Daftar Produk</h1>
-                    
-                    <table class="sales-table">
-                    <style>
-  table {
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #ddd;
-  }
-</style>
+    .sidebar_menu .logo {
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+    }
 
-<table>
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>Nama Produk</th>
-      <th>Jumlah Terjual</th>
-      <th>Harga Satuan</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Produk A</td>
-      <td>10</td>
-      <td>Rp 10,000</td>
-      <td>Rp 100,000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Produk B</td>
-      <td>5</td>
-      <td>Rp 20,000</td>
-      <td>Rp 100,000</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Produk C</td>
-      <td>8</td>
-      <td>Rp 15,000</td>
-      <td>Rp 120,000</td>
-    </tr>
-  </tbody>
-</table>
-<!-- batas kodingan table daftar produk -->
+    .sidebar_menu .logo a {
+      color: #fff;
+      font-size: 25px;
+      font-weight: 500;
+      position: absolute;
+      left: 50px;
+      line-height: 60px;
+      text-decoration: none;
+    }
 
+    .sidebar_menu .menu {
+      position: absolute;
+      top: 80px;
+      width: 100%;
+    }
 
-<!-- codingan php -->
-<?php
+    .sidebar_menu .menu li {
+      margin-top: 6px;
+      padding: 14px 20px;
+    }
 
+    .sidebar_menu .menu i {
+      color: #fff;
+      font-size: 20px;
+      padding-right: 8px;
+    }
 
-?>
-<!-- batas codingan php -->
+    .sidebar_menu .menu a {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+    }
 
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-    <script>
-        window.addEventListener('DOMContentLoaded', event => {
+    .sidebar_menu .menu li:hover {
+      border-left: 1px solid #fff;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    }
 
-// Toggle the side navigation
-const sidebarToggle = document.body.querySelector('#sidebarToggle');
-if (sidebarToggle) {
-    // Uncomment Below to persist sidebar toggle between refreshes
-    // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-    //     document.body.classList.toggle('sb-sidenav-toggled');
-    // }
-    sidebarToggle.addEventListener('click', event => {
-        event.preventDefault();
-        document.body.classList.toggle('sb-sidenav-toggled');
-        localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
-    });
-}
+    .sidebar_menu .social_media {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 20px;
+      list-style: none;
+      cursor: pointer;
+    }
 
-});
-    </script>
-    </body>
+    .sidebar_menu .social_media i {
+      text-decoration: none;
+      padding: 0 5px;
+      color: #fff;
+      opacity: 0.6;
+      font-size: 20px;
+    }
+
+    .sidebar_menu .social_media i:hover {
+      opacity: 1;
+      transition: all 0.2s linear;
+      transform: scale(1.01);
+    }
+
+    #check {
+      display: none;
+    }
+
+    .main_box .btn_one i {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+      position: absolute;
+      left: 16px;
+      line-height: 60px;
+      cursor: pointer;
+      opacity: 1;
+      transition: all 0.3s linear;
+    }
+
+    .sidebar_menu .btn_two i {
+      font-size: 25px;
+      line-height: 60px;
+      position: absolute;
+      left: 240px;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s linear;
+    }
+
+    .btn_one i:hover {
+      font-size: 29px;
+    }
+
+    .btn_two i:hover {
+      font-size: 24px;
+    }
+
+    #check:checked~.sidebar_menu {
+      left: 0;
+    }
+
+    #check:checked~.btn_one i {
+      opacity: 0;
+    }
+
+    #check:checked~.sidebar_menu .btn_two i {
+      opacity: 1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="main_box">
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+      <label for="check">
+        <i class="fas fa-bars"></i>
+      </label>
+    </div>
+    <div class="sidebar_menu">
+      <div class="logo">
+        <a href="#">Aldy'z Cell</a>
+      </div>
+      <div class="btn_two">
+        <label for="check">
+          <i class="fas fa-times"></i>
+        </label>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><i class="fas fa-qrcode"></i><a href="#">Admin</a></li>
+          <li><i class="fas fa-link"></i><a href="#">Index Utama</a></li>
+          <li><i class="fas fa-stream"></i><a href="#">Kelola Pegawai</a></li>
+          <li><i class="fas fa-calendar-week"></i><a href="#">Kelola Transaksi</a></li>
+          <li><i class="fas fa-question-circle"></i><a href="#">Kelola Produk</a></li>
+        </ul>
+      </div>
+      <div class="social_media">
+        <ul>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
