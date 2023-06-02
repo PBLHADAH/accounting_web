@@ -38,7 +38,7 @@
     </style>
 </head>
 <body>
-    <?php
+<?php
     // Mengimpor file koneksi.php yang berisi konfigurasi koneksi ke database
     require 'koneksi.php';
 
@@ -63,8 +63,10 @@
         }
     }
 
-    // Menjalankan pernyataan SQL untuk mengambil data dari tabel transaksi_lainnya
-    $sql = "SELECT * FROM transaksi_lainnya";
+    // Menjalankan pernyataan SQL untuk mengambil data dari tabel transaksi_lainnya dan melakukan inner join dengan tabel pegawai
+    $sql = "SELECT transaksi_lainnya.id_transaksi_lainnya, transaksi_lainnya.deskripsi, pegawai.nama, transaksi_lainnya.tanggal
+            FROM transaksi_lainnya
+            INNER JOIN pegawai ON transaksi_lainnya.pegawai_id_pegawai = pegawai.id_pegawai";
     $result = $conn->query($sql);
 
     // Memeriksa apakah ada hasil data yang ditemukan
@@ -74,7 +76,7 @@
         echo '<tr>';
         echo '<th>id_transaksi_lainnya</th>';
         echo '<th>deskripsi</th>';
-        echo '<th>pegawai_id_pegawai</th>';
+        echo '<th>pegawai</th>';
         echo '<th>tanggal</th>';
         echo '<th>Aksi</th>';
         echo '</tr>';
@@ -84,7 +86,7 @@
             echo '<tr>';
             echo '<td>' . $row['id_transaksi_lainnya'] . '</td>';
             echo '<td>' . $row['deskripsi'] . '</td>';
-            echo '<td>' . $row['pegawai_id_pegawai'] . '</td>';
+            echo '<td>' . $row['nama'] . '</td>';
             echo '<td>' . $row['tanggal'] . '</td>';
             echo '<td>';
             echo '<a href="edit_transaksi.php?id=' . $row['id_transaksi_lainnya'] . '">Edit</a>';
@@ -101,7 +103,8 @@
     }
 
     // Menutup koneksi ke database
-    ?>
+?>
+
     <form action="tambahtransaksi.php" method="POST">
     <div action class="button-container">
         <button onclick="location.href='tambah_transaksi.php'">Tambah Transaksi</button>
