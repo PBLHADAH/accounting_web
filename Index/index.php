@@ -187,7 +187,33 @@
       font-size: 24px;
       margin-bottom: 20px;
     }
-  </style>
+
+/* styling .logout-icon */
+#logout-btn {
+  border: none;
+  background-color: red;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.logout-icon {
+  margin-right: none;
+}
+
+#logout-btn:hover {
+  color: #ff0000;
+}
+/* batas styling logout */
+
+/* styling searching */
+/* kurang styling searching */
+/* batas styling searching */
+ </style>
 
 </head>
 
@@ -218,39 +244,44 @@
         </ul>
       </div>
 
-      <!-- social media -->
+      <!-- Logout -->
       <div class="social_media">
         <ul>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+        <button id="logout-btn">
+      <span class="logout-icon"></span>
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Logout
+      </button>
         </ul>
       </div>
     </div>
   </div>
+
+
+  <!-- Searching -->
+  <!-- kurang kodingan searching -->
+  <!-- batas searching -->
+   
 
   <!-- Landing page  dan tabel -->
   <div class="container">
     <h1>Daftar Pegawai</h1>
 
     <!-- tabel -->
-    <?php require '../pegawai/tabel_pegawai.php'?>
+    <?php require '../pegawai/tabel_pegawai.php'; ?>
       
   </div>
 
   <!-- Landing page  dan tabel -->
   <div class="container">
     <h1>Daftar Produk</h1>
-    <?php require '../produk/tabel_produk.php'?>
+    <?php require '../produk/tabel_produk.php'; ?>
     <!-- tabel -->
 
     <!-- Landing page  dan tabel -->
     <div class="container">
     <h1>Transaksi</h1>
-      <?php
-      require "../transaksi_lainnya/tabel_transaksi_lainnya.php"
-      ?>
+      <?php require '../transaksi_lainnya/tabel_transaksi_lainnya.php'; ?>
     </div>
 
 
