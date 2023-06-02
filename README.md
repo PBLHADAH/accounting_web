@@ -47,6 +47,7 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
    3. Edit produk ❌
    4. Delete produk ❌
 7. Pengelolaan pegawai [Aldi]❌
-   1. Tabel pegawai ❌
+   1. Tabel pegawai ✅
    2. Create pegawai ✅
    3. Read pegawai ✅
+   4. Delete pegawai❌
