@@ -26,28 +26,27 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
    4. Tabel transaksi lainnya ❌
    5. Tabel pegawai ❌
    6. Tabel produk ❌
-3. Pengelolaan Penjualan ❌
+3. Pengelolaan Penjualan [Maulana]❌
    1. Tabel penjualan ❌
    2. Create penjualan ❌
    3. Edit penjualan ❌
    4. Delete penjualan ❌
-4. Pengelolaan Perkulakan ❌
+4. Pengelolaan Perkulakan[Dana] ❌
    1. Tabel perkulakan ❌
    2. Create perkulakan ❌
    3. Edit perkulakan ❌
    4. Delete perkulakan ❌
-5. Pengelolaan lainnya ❌
+5. Pengelolaan lainnya [Holil]❌
    1. Tabel lainnya ❌
    2. Create lainnya ❌
    3. Edit lainnya ❌
    4. Delete lainnya ❌
-6. Pengelolaan produk ❌
+6. Pengelolaan produk [Alfin]❌
    1. Tabel produk ❌
    2. Create produk ❌
    3. Edit produk ❌
    4. Delete produk ❌
-7. Pengelolaan pegawai ❌
+7. Pengelolaan pegawai [Aldi]❌
    1. Tabel pegawai ❌
    2. Create pegawai ✅
-   3. Edit pegawai ❌
-   4. Delete pegawai ❌
+   3. Read pegawai ✅

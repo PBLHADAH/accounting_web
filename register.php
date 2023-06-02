@@ -44,8 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($cekUserResult->num_rows == 0){
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
         if ($password == $konfirmasi){
-            $sql = "INSERT INTO pegawai (username, password, nama, alamat, no_hp) VALUES ('$username', 
-            '$hashedPassword', '$nama_lengkap', '$alamat', $no_hp)";
+            $sql = "INSERT INTO pegawai (username, password, nama, alamat, no_hp) VALUES ('$username', '$hashedPassword', '$nama_lengkap', '$alamat', $no_hp)";
             $conn->query($sql);
             header("Location: login.php");
             exit();
