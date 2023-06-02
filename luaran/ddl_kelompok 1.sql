@@ -1,33 +1,34 @@
 -- -----------------------------------------------------
 -- Schema db_aldyz
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `db_aldyz` ;
+DROP SCHEMA IF EXISTS `db_aldyz`;
 
 -- -----------------------------------------------------
 -- Schema db_aldyz
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `db_aldyz` DEFAULT CHARACTER SET utf8 ;
-USE `db_aldyz` ;
+CREATE SCHEMA IF NOT EXISTS `db_aldyz` DEFAULT CHARACTER SET utf8;
+USE `db_aldyz`;
 
 -- -----------------------------------------------------
 -- Table `db_aldyz`.`pegawai`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_aldyz`.`pegawai` (
-  `id_pegawai` INT NOT NULL,
+  `id_pegawai` INT NOT NULL AUTO_INCREMENT,
   `nama` VARCHAR(255) NOT NULL,
   `no_hp` VARCHAR(45) NOT NULL,
   `alamat` VARCHAR(45) NOT NULL,
   `username` VARCHAR(20) NULL,
   `password` VARCHAR(255) NULL,
   `jabatan` ENUM('manajer', 'pegawai') NOT NULL,
-  PRIMARY KEY (`id_pegawai`));
+  PRIMARY KEY (`id_pegawai`)
+);
 
 
 -- -----------------------------------------------------
 -- Table `db_aldyz`.`transaksi_penjualan`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_penjualan` (
-  `id_transaksi_penjualan` INT NOT NULL,
+  `id_transaksi_penjualan` INT NOT NULL AUTO_INCREMENT,
   `penjualan_retail` INT NOT NULL,
   `penjualan_grosir` INT NOT NULL,
   `penjualan_aksesoris` INT NOT NULL,
@@ -44,25 +45,27 @@ CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_penjualan` (
     FOREIGN KEY (`pegawai_id_manajer`)
     REFERENCES `db_aldyz`.`pegawai` (`id_pegawai`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION
+);
 
 
 -- -----------------------------------------------------
 -- Table `db_aldyz`.`produk`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_aldyz`.`produk` (
-  `id_produk` INT NULL DEFAULT NULL,
+  `id_produk` INT NOT NULL AUTO_INCREMENT,
   `nama_produk` VARCHAR(255) NOT NULL,
   `harga_produk` DECIMAL(10,2) NOT NULL,
   `supplier` INT NOT NULL,
-  PRIMARY KEY (`id_produk`));
+  PRIMARY KEY (`id_produk`)
+);
 
 
 -- -----------------------------------------------------
 -- Table `db_aldyz`.`transaksi_perkulakan`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_perkulakan` (
-  `id_transaksi_perkulakan` INT NOT NULL,
+  `id_transaksi_perkulakan` INT NOT NULL AUTO_INCREMENT,
   `pegawai_id_pegawai` INT NOT NULL,
   `tanggal` DATETIME NOT NULL,
   PRIMARY KEY (`id_transaksi_perkulakan`),
@@ -70,14 +73,15 @@ CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_perkulakan` (
     FOREIGN KEY (`pegawai_id_pegawai`)
     REFERENCES `db_aldyz`.`pegawai` (`id_pegawai`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION
+);
 
 
 -- -----------------------------------------------------
 -- Table `db_aldyz`.`transaksi_lainnya`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_lainnya` (
-  `id_transaksi_lainnya` INT NOT NULL,
+  `id_transaksi_lainnya` INT NOT NULL AUTO_INCREMENT,
   `deskripsi` VARCHAR(255) NULL DEFAULT NULL,
   `pegawai_id_pegawai` INT NOT NULL,
   `tanggal` DATETIME NOT NULL,
@@ -86,7 +90,8 @@ CREATE TABLE IF NOT EXISTS `db_aldyz`.`transaksi_lainnya` (
     FOREIGN KEY (`pegawai_id_pegawai`)
     REFERENCES `db_aldyz`.`pegawai` (`id_pegawai`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION
+);
 
 
 -- -----------------------------------------------------
@@ -106,4 +111,5 @@ CREATE TABLE IF NOT EXISTS `db_aldyz`.`perkulakan_detail` (
     FOREIGN KEY (`transaksi_perkulakan_id_transaksi_perkulakan`)
     REFERENCES `db_aldyz`.`transaksi_perkulakan` (`id_transaksi_perkulakan`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION
+);
