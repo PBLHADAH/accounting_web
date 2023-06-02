@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             // Passwords match, redirect to a welcome page
             $_SESSION['userdata'] = $row;
-            header("Location: welcome.php");
+            header("Location: index.php");
             exit();
         } else {
             // Invalid password, show an error message
@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Invalid username, show an error message
         echo "Invalid username.";
     }
+
 }
 
 $conn->close();
