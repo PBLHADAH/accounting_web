@@ -1,6 +1,6 @@
 <?php
 // Database connection details
-require 'koneksi.php';
+require '../koneksi.php';
 
 // Query to retrieve data from the 'pegawai' table
 $query = "SELECT * FROM pegawai";
@@ -28,7 +28,6 @@ $result = $conn->query($query);
     </style>
 </head>
 <body>
-    <h2>Pegawai Table</h2>
     <table>
         <thead>
             <tr>
@@ -37,7 +36,6 @@ $result = $conn->query($query);
                 <th>No. HP</th>
                 <th>Alamat</th>
                 <th>Username</th>
-                <th>Password</th>
                 <th>Jabatan</th>
             </tr>
         </thead>
@@ -51,7 +49,6 @@ $result = $conn->query($query);
                 echo "<td>" . $row['no_hp'] . "</td>";
                 echo "<td>" . $row['alamat'] . "</td>";
                 echo "<td>" . $row['username'] . "</td>";
-                echo "<td>" . $row['password'] . "</td>";
                 echo "<td>" . $row['jabatan'] . "</td>";
                 echo "</tr>";
             }

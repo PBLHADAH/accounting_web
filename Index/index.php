@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aldy'z Cell</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- kodingan css -->
@@ -20,9 +18,7 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    .main_box {
-     
-    }
+    .main_box {}
 
     .main_box .sidebar_menu {
       position: fixed;
@@ -151,40 +147,52 @@
 
     /* css table */
     .container {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
 
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #f2f2f2;
+    }
 
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
+    th {
+      background-color: #f7f7f7;
+      font-weight: bold;
+      color: #555;
+    }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
 
-tr:hover {
-  background-color: #f5f5f5;
-}
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* Styling Heading */
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   </style>
 
 </head>
 
 <body>
+  <!-- Navbar side bar -->
   <div class="main_box">
     <input type="checkbox" id="check">
     <div class="btn_one">
@@ -192,11 +200,13 @@ tr:hover {
         <i class="fas fa-bars"></i>
       </label>
     </div>
+
+    <!-- side bar nama dikiri -->
     <div class="sidebar_menu">
       <div class="logo">
         <a href="#">Aldy'z Cell</a>
       </div>
-      
+
       <div class="menu">
         <!-- icon -->
         <ul>
@@ -207,7 +217,7 @@ tr:hover {
           <li><i class="fa-solid fa-book"></i><a href="#">Kelola Produk</a></li>
         </ul>
       </div>
-      
+
       <!-- social media -->
       <div class="social_media">
         <ul>
@@ -222,103 +232,135 @@ tr:hover {
 
   <!-- Landing page  dan tabel -->
   <div class="container">
-  <h1>Hasil Daftar Pegawai</h1> <br>
+    <h1>Daftar Pegawai</h1>
 
-  <!-- tabel -->
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>City</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John Doe</td>
-        <td>25</td>
-        <td>New York</td>
-      </tr>
-      <tr>
-        <td>Jane Smith</td>
-        <td>30</td>
-        <td>London</td>
-      </tr>
-      <tr>
-        <td>Mark Johnson</td>
-        <td>35</td>
-        <td>Tokyo</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <!-- tabel -->
+    <?php require '../pegawai/tabel_pegawai.php'?>
+      
+  </div>
 
-<!-- Landing page  dan tabel -->
-<div class="container">
-  <h1>Hasil Daftar Transaksi</h1> <br>
+  <!-- Landing page  dan tabel -->
+  <div class="container">
+    <h1>Daftar Produk</h1>
 
-  <!-- tabel -->
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>City</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John Doe</td>
-        <td>25</td>
-        <td>New York</td>
-      </tr>
-      <tr>
-        <td>Jane Smith</td>
-        <td>30</td>
-        <td>London</td>
-      </tr>
-      <tr>
-        <td>Mark Johnson</td>
-        <td>35</td>
-        <td>Tokyo</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <!-- tabel -->
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Produk</th>
+          <th>Harga Produk</th>
+          <th>Supplier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>25</td>
+          <td>New York</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>30</td>
+          <td>London</td>
+        </tr>
+        <tr>
+          <td>Mark Johnson</td>
+          <td>35</td>
+          <td>Tokyo</td>
+        </tr>
+      </tbody>
+    </table>
 
-<!-- Landing page  dan tabel -->
-<div class="container">
-  <h1>Hasil Daftar Produk</h1> <br>
+    <!-- Landing page  dan tabel -->
+    <div class="container">
+      <h1>Daftar Transaksi Lainnya</h1>
 
-  <!-- tabel -->
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>City</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John Doe</td>
-        <td>25</td>
-        <td>New York</td>
-      </tr>
-      <tr>
-        <td>Jane Smith</td>
-        <td>30</td>
-        <td>London</td>
-      </tr>
-      <tr>
-        <td>Mark Johnson</td>
-        <td>35</td>
-        <td>Tokyo</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      <!-- tabel -->
+      <table>
+        <thead>
+          <tr>
+            <th>Deskripsi</th>
+            <th>Tanggal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- Landing page  dan tabel -->
+    <div class="container">
+      <h1>Daftar Transaksi Penjualan</h1>
+
+      <!-- tabel -->
+      <table>
+        <thead>
+          <tr>
+            <th>Penjualan Retail</th>
+            <th>Penjualan Grosir</th>
+            <th>Penjualan Aksesoris</th>
+            <th>Tanggal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>25</td>
+            <td>asdas</td>
+            <td>sadasd</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>30</td>
+            <td>qwasdas</td>
+            <td>asdasj</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Landing page  dan tabel -->
+      <div class="container">
+        <h1>Daftar Transaksi Perkulakan</h1>
+
+        <!-- tabel -->
+        <table>
+          <thead>
+            <tr>
+              <th>Kuantitas</th>
+              <th>Tanggal</th>
+              <th>Supplier</th>
+              <th>Nama Produk</th>
+              <th>Harga Produk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>25</td>
+              <td>hasndias</td>
+              <td>asdasd</td>
+              <td>asdasdas</td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>30</td>
+              <td>asdasdsad</td>
+              <td>asdasdsad</td>
+              <td>asdasdsa</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
 </body>
-
 </html>

@@ -19,24 +19,24 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
 1. Login ❌
    1. Login ke database ✅
    2. Session ❌
-2. Index [Hanif Semua] ❌
-   1. Navigasi ❌
-   2. Tabel Penjualan ❌
-   3. Tabel Perkulakan ❌
-   4. Tabel transaksi lainnya ❌
-   5. Tabel pegawai ❌
-   6. Tabel produk ❌
-3. Pengelolaan Penjualan [Maulana]❌
+2. Index [Hanif Semua] ✅
+   1. Navigasi ✅
+   2. Tabel Penjualan ✅
+   3. Tabel Perkulakan ✅
+   4. Tabel transaksi lainnya ✅
+   5. Tabel pegawai ✅
+   6. Tabel produk ✅
+3. Pengelolaan Transaksi Penjualan [Maulana]❌
    1. Tabel penjualan ❌
    2. Create penjualan ❌
    3. Edit penjualan ❌
    4. Delete penjualan ❌
-4. Pengelolaan Perkulakan[Dana] ❌
+4. Pengelolaan Transaksi Perkulakan[Dana] ❌
    1. Tabel perkulakan ❌
    2. Create perkulakan ❌
    3. Edit perkulakan ❌
    4. Delete perkulakan ❌
-5. Pengelolaan lainnya [Holil]❌
+5. Pengelolaan Transaksi lainnya [Holil]❌
    1. Tabel lainnya ❌
    2. Create lainnya ❌
    3. Edit lainnya ❌
