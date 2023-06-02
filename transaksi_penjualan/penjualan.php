@@ -29,13 +29,13 @@ $result = $conn->query($sql);
     .add-link {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: ##1d54bf;
             color: white;
             text-decoration: none;
             border-radius: 4px;
         }
         .add-link:hover {
-            background-color: #45a049;
+            background-color: #1d54bf;
         }
         /* Style untuk judul dan tautan */
         .header-container {
@@ -52,13 +52,16 @@ $result = $conn->query($sql);
             border-radius: 4px;
         }
         .add-link:hover {
-            background-color: #45a049;
+            background-color: #1d54bf;
         }
         /* Style untuk judul dan tautan */
         .header-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+        .action-separator {
+            margin: 0 5px;
         }
 	</style>
 </head>
@@ -91,6 +94,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['tanggal'] . "</td>";
                 echo "<td>";
                 echo "<a href=\"edit_transaksi.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\">Edit</a>";
+                echo "<span class=\"action-separator\">|</span>";
                 echo "<a href=\"delete_transaksi.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
                 echo "</td>";
                 echo "</tr>";
