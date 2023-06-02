@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 // Function to sanitize user inputs
 function sanitize($input)
@@ -24,8 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully.";
-        echo "<br>";
-        echo "<a href=\"tabel_pegawai_detail.php\">Back to Table</a>";
+        header("Location: pegawai.php");
     } else {
         echo "Error updating record: " . $conn->error;
     }
@@ -46,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h2>Edit Pegawai</h2>
-    <form action="edit_pegawai.php" method="post">
+    <form action="update_pegawai.php" method="post">
         <input type="hidden" name="id_pegawai" value="<?php echo $row['id_pegawai']; ?>">
         <label for="nama">Nama:</label>
         <input type="text" name="nama" value="<?php echo $row['nama']; ?>"><br><br>

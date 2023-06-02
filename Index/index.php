@@ -235,36 +235,8 @@
     <h1>Daftar Pegawai</h1>
 
     <!-- tabel -->
-    <table>
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>No HP</th>
-          <th>Alamat</th>
-          <th>Jabatan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>John Doe</td>
-          <td>25</td>
-          <td>New York</td>
-          <td>Karyawan</td>
-        </tr>
-        <tr>
-          <td>Jane Smith</td>
-          <td>30</td>
-          <td>London</td>
-          <td>Karyawan</td>
-        </tr>
-        <tr>
-          <td>Mark Johnson</td>
-          <td>35</td>
-          <td>Tokyo</td>
-          <td>Karyawan</td>
-        </tr>
-      </tbody>
-    </table>
+    <?php require '../pegawai/tabel_pegawai.php'?>
+      
   </div>
 
   <!-- Landing page  dan tabel -->
