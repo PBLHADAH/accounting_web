@@ -11,7 +11,7 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
 6. Figma ❌
 7. Front end ❌
 8. Back end ❌
-9. Rpp ❌
+9. Rpp ✅
 10. Laporan Akhir ❌
 
 
