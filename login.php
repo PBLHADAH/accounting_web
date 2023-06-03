@@ -291,7 +291,7 @@ img {
     display: block;
     height: 4px;
     margin: 6px;
-    background-color: #fff;
+    background-color: #2268EF;
   }
   .bg-illustration .burger-btn span:nth-child(1) {
     width: 37px;
