@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 $resetSql = "ALTER TABLE transaksi_penjualan AUTO_INCREMENT = 1";
                 $conn->query($resetSql);
 
-                header('Location: penjualan.php'); // Ganti dengan halaman yang sesuai
+                header('Location: table_pejualan.php'); // Ganti dengan halaman yang sesuai
             } else {
                 echo "Error deleting transaction: " . $conn->error;
             }
