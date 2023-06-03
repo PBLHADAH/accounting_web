@@ -93,7 +93,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['pegawai_id_manajer'] . "</td>";
                 echo "<td>" . $row['tanggal'] . "</td>";
                 echo "<td>";
-                echo "<a href=\"edit_transaksi.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\">Edit</a>";
+                echo "<a href=\"update_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\">Edit</a>";
                 echo "<span class=\"action-separator\">|</span>";
                 echo "<a href=\"delete_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
                 echo "</td>";

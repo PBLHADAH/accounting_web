@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head
+<head>
     <title>Edit Transaction</title>
 </head>
 <body>
@@ -18,16 +18,14 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_transaksi_penjualan = sanitize($_POST["id_transaksi_penjualan"]);
-        $penjualan_retail = sanitize($_POST["penjualan_retail"]);
-        $penjualan_grosir = sanitize($_POST["penjualan_grosir"]);
-        $penjualan_aksesoris = sanitize($_POST["penjualan_aksesoris"]);
-        $pegawai_id_pegawai = sanitize($_POST["pegawai_id_pegawai"]);
+        $deskripsi = sanitize($_POST["deskripsi"]);
+        $nominal = sanitize($_POST["nominal"]);
+        $pegawai_id = sanitize($_POST["pegawai_id"]);
 
-
-        $sql = "UPDATE transaksi_penjualan SET penjualan_retail='$penjualan_retail', penjualan_grosir='$penjualan_grosir', pegawai_id_pegawai_pegawai='$pegawai_id_pegawai' WHERE id_transaksi_penjualan_lainnya='$id_transaksi_penjualan'";
+        $sql = "UPDATE transaksi_lainnya SET deskripsi='$deskripsi', nominal='$nominal', pegawai_id_pegawai='$pegawai_id' WHERE id_transaksi_penjualan_lainnya='$id_transaksi_penjualan'";
 
         if ($conn->query($sql) === TRUE) {
-            header('Location: penjualan.php'); // ganti
+            header('Location: transaksi_lainnya.php'); // ganti
         } else {
             echo "Error updating transaction: " . $conn->error;
         }
@@ -41,18 +39,18 @@
 
     <form action="edit_transaksi.php" method="post">
         <input type="hidden" name="id_transaksi_penjualan" value="<?php echo $row['id_transaksi_penjualan_lainnya']; ?>">
-        <label for="penjualan_retail">penjualan_retail:</label><br>
-        <input type="text" name="penjualan_retail" value="<?php echo $row['penjualan_retail']; ?>"><br><br>
-        <label for="penjualan_grosir">penjualan_grosir:</label><br>
-        <input type="number" name="penjualan_grosir" value="<?php echo $row['penjualan_grosir']; ?>"><br><br>
-        <label for="pegawai_id_pegawai">Pegawai ID:</label><br>
-        <select id="pegawai_id_pegawai" name="pegawai_id_pegawai" required>
+        <label for="deskripsi">Deskripsi:</label><br>
+        <input type="text" name="deskripsi" value="<?php echo $row['deskripsi']; ?>"><br><br>
+        <label for="nominal">Nominal:</label><br>
+        <input type="number" name="nominal" value="<?php echo $row['nominal']; ?>"><br><br>
+        <label for="pegawai_id">Pegawai ID:</label><br>
+        <select id="pegawai_id" name="pegawai_id" required>
         <?php
         $sql = "SELECT id_pegawai, nama FROM pegawai";
         $result = mysqli_query($conn, $sql);
 
         while ($pegawai = mysqli_fetch_assoc($result)) {
-            $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_pegawai_pegawai']) ? "selected" : "";
+            $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_pegawai']) ? "selected" : "";
             echo "<option value='" . $pegawai['id_pegawai'] . "' " . $selected . ">" . $pegawai['nama'] . "</option>";
         }
         ?>
