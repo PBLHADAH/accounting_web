@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>tambah penjualan.</title>
+    <title>Ubah Penjualan</title>
     <style>
         /* Style untuk button */
         button {
@@ -33,83 +33,89 @@
     </style>
 </head>
 <body>
-    <h2>Edit Transaction</h2>
+    <h1>Ubah Transaksi Penjualan</h1>
     <?php
-    require_once '../koneksi.php';
+    require_once "../koneksi.php";
 
-    // Memeriksa koneksi database
-    if (!$conn) {
-        die('Koneksi database gagal: ' . mysqli_connect_error());
-    }
+    // Mengecek apakah ID transaksi diberikan dalam parameter URL
+    if (isset($_GET['id_transaksi'])) {
+        $id_transaksi = $_GET['id_transaksi'];
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $id_transaksi_penjualan = sanitize($_POST['id_transaksi_penjualan']);
-        $penjualan_retail = sanitize($_POST['penjualan_retail']);
-        $penjualan_aksesoris = sanitize($_POST['penjualan_aksesoris']);
-        $pegawai_id_pegawai = sanitize($_POST['pegawai_id_pegawai']);
-        $pegawai_id_manajer = sanitize($_POST['pegawai_id_pegawai']);
+        // Membuat koneksi ke database
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        $sql = "UPDATE transaksi_lainnya SET penjualan_retail='$penjualan_retail', penjualan_aksesoris='$penjualan_aksesoris', pegawai_id_pegawai_pegawai='$pegawai_id_pegawai', WHERE id_transaksi_penjualan_lainnya='$id_transaksi_penjualan'";
-
-        if ($conn->query($sql) === true) {
-            header('Location: transaksi_lainnya.php'); // ganti
-        } else {
-            echo 'Error updating transaction: ' . $conn->error;
+        // Memeriksa koneksi database
+        if (!$conn) {
+            die("Koneksi database gagal: " . mysqli_connect_error());
         }
-    } else {
-        $id_transaksi_penjualan = $_GET['id_transaksi_penjualan'];
 
-        $sql = "SELECT * FROM transaksi_lainnya WHERE id_transaksi_penjualan_lainnya='$id_transaksi_penjualan'";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-    }
-    ?>
-
-    <form action="edit_transaksi.php" method="post">
-        <input type="hidden" name="id_transaksi_penjualan" value="<?php echo $row[
-            'id_transaksi_penjualan_lainnya'
-        ]; ?>">
-        <label for="penjualan_retail">penjualan_retail:</label><br>
-        <input type="text" name="penjualan_retail" value="<?php echo $row[
-            'penjualan_retail'
-        ]; ?>"><br><br>
-        <label for="penjualan_aksesoris">penjualan_aksesoris:</label><br>
-        <input type="number" name="penjualan_aksesoris" value="<?php echo $row[
-            'penjualan_aksesoris'
-        ]; ?>"><br><br>
-        <label for="pegawai_id_pegawai">Pegawai ID:</label><br>
-        <select id="pegawai_id_pegawai" name="pegawai_id_pegawai" required>
-        <?php
-        $sql = 'SELECT id_pegawai, nama FROM pegawai';
+        // Query untuk mendapatkan data transaksi berdasarkan ID transaksi
+        $sql = "SELECT * FROM transaksi_penjualan WHERE id_transaksi_penjualan='$id_transaksi'";
         $result = mysqli_query($conn, $sql);
 
-        while ($pegawai = mysqli_fetch_assoc($result)) {
-            $selected =
-                $pegawai['id_pegawai'] == $row['pegawai_id_pegawai_pegawai']
-                    ? 'selected'
-                    : '';
-            echo "<option value='" .
-                $pegawai['id_pegawai'] .
-                "' " .
-                $selected .
-                '>' .
-                $pegawai['nama'] .
-                '</option>';
+        // Memeriksa apakah data transaksi ditemukan
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+
+            // Menampilkan form untuk mengubah data transaksi
+            ?>
+            <form action="" method="POST">
+                <input type="hidden" name="id_transaksi" value="<?php echo $row['id_transaksi_penjualan']; ?>">
+                <label for="penjualan_retail">Retail:</label>
+                <input type="text" id="penjualan_retail" name="penjualan_retail" value="<?php echo $row['penjualan_retail']; ?>" required><br><br>
+                <label for="penjualan_grosir">Grosir:</label>
+                <input type="text" id="penjualan_grosir" name="penjualan_grosir" value="<?php echo $row['penjualan_grosir']; ?>" required><br><br>
+                <label for="penjualan_aksesoris">Aksesoris:</label>
+                <input type="text" id="penjualan_aksesoris" name="penjualan_aksesoris" value="<?php echo $row['penjualan_aksesoris']; ?>" required><br><br>
+                <label for="pegawai_id_pegawai">Pegawai:</label>
+                <select id="pegawai_id_pegawai" name="pegawai_id_pegawai" required>
+                    <?php
+                    // Query untuk mengambil data pegawai dengan jabatan "pegawai" dari tabel
+                    $sql = "SELECT id_pegawai, nama FROM pegawai WHERE jabatan = 'pegawai'";
+                    $result = mysqli_query($conn, $sql);
+
+                    // Menghasilkan opsi dropdown berdasarkan data pegawai dengan jabatan "pegawai"
+                    while ($pegawai = mysqli_fetch_assoc($result)) {
+                        $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_pegawai']) ? "selected" : "";
+                        echo "<option value='" . $pegawai['id_pegawai'] . "' $selected>" . $pegawai['nama'] . "</option>";
+                    }
+                    ?>
+                </select><br><br>
+                <label for="pegawai_id_manajer">Manajer:</label>
+                <select id="pegawai_id_manajer" name="pegawai_id_manajer" required>
+                    <?php
+                    // Query untuk mengambil data pegawai dengan jabatan "manajer" dari tabel
+                    $sql = "SELECT id_pegawai, nama FROM pegawai WHERE jabatan = 'manajer'";
+                    $result = mysqli_query($conn, $sql);
+
+                    // Menghasilkan opsi dropdown berdasarkan data pegawai dengan jabatan "manajer"
+                    while ($pegawai = mysqli_fetch_assoc($result)) {
+                        $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_manajer']) ? "selected" : "";
+                        echo "<option value='" . $pegawai['id_pegawai'] . "' $selected>" . $pegawai['nama'] . "</option>";
+                    }
+                    ?>
+                </select><br><br>
+                <input type="hidden" id="tanggal" name="tanggal" value="<?php echo $row['tanggal']; ?>">
+                <button onclick="location.href='Table_penjualan.php'">Kembali</button>
+                <input type="submit" name="submit" value="Simpan Perubahan">
+            </form>
+            <?php
+        } else {
+            echo "Transaksi tidak ditemukan.";
         }
-        ?>
-        </select><br><br>
 
-        <input type="hidden" id="tanggal" name="tanggal" value="<?php echo date(
-            'Y-m-d'
-        ); ?>">
-
-        <button onclick="location.href='Table_penjualan.php'">Kembali</button>
-        <input type="submit" name="submit" value="Konfirmasi">
-    </form>
+        // Tutup koneksi database
+        mysqli_close($conn);
+    } else {
+        echo "ID transaksi tidak diberikan.";
+    }
+    ?>
 </body>
 </html>
 
-<?php if (isset($_POST['submit'])) {
+<?php
+if (isset($_POST['submit'])) {
+    $id_transaksi = $_POST['id_transaksi'];
     $penjualan_retail = $_POST['penjualan_retail'];
     $penjualan_grosir = $_POST['penjualan_grosir'];
     $penjualan_aksesoris = $_POST['penjualan_aksesoris'];
@@ -125,21 +131,19 @@
 
     // Memeriksa koneksi database
     if (!$conn) {
-        die('Koneksi database gagal: ' . mysqli_connect_error());
+        die("Koneksi database gagal: " . mysqli_connect_error());
     }
 
-    // Query untuk menyimpan data produk ke tabel
-    // Query untuk menyimpan data produk ke tabel
-    // Query untuk menyimpan data produk ke tabel
-    $sql = "INSERT INTO transaksi_penjualan (penjualan_retail, penjualan_grosir, penjualan_aksesoris, pegawai_id_pegawai, pegawai_id_manajer, tanggal) VALUES ('$penjualan_retail', '$penjualan_grosir', '$penjualan_aksesoris', '$pegawai_id_pegawai', '$pegawai_id_manajer', '$tanggal')";
+    // Query untuk mengupdate data transaksi berdasarkan ID transaksi
+    $sql = "UPDATE transaksi_penjualan SET penjualan_retail='$penjualan_retail', penjualan_grosir='$penjualan_grosir', penjualan_aksesoris='$penjualan_aksesoris', pegawai_id_pegawai='$pegawai_id_pegawai', pegawai_id_manajer='$pegawai_id_manajer', tanggal='$tanggal' WHERE id_transaksi_penjualan='$id_transaksi'";
 
     if (mysqli_query($conn, $sql)) {
-        // Penyimpanan berhasil
-        header('Location: Table_penjualan.php'); // Redirect kembali ke halaman kelolaproduk.php
+        // Perubahan berhasil
+        header("Location: Table_penjualan.php"); // Redirect kembali ke halaman Table_penjualan.php
         exit();
     } else {
-        // Terjadi kesalahan dalam penyimpanan data
-        echo 'Gagal menyimpan data: ' . mysqli_error($conn);
+        // Terjadi kesalahan dalam melakukan perubahan data
+        echo "Gagal melakukan perubahan data: " . mysqli_error($conn);
     }
 
     // Tutup koneksi database
