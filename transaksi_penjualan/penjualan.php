@@ -68,7 +68,7 @@ $result = $conn->query($sql);
 <body>
     <div class="header-container">
         <h2>Penjualan</h2>
-        <a href="" class="add-link">Tambah Penjualan</a>
+        <a href="create_penjualan.php" class="add-link">Tambah Penjualan</a>
     </div>
     <table>
         <thead>
