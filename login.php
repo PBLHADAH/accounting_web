@@ -389,7 +389,7 @@ img {
     
     <div class="login">
       <div class="container">
-        <h1>Login untuk<br />Masuk ke Dashboard</h1>
+    <h1>Login!</h1>
         <div class="login-form">
           <form action="">
             <input type="email" placeholder="E-mail Address">
@@ -398,7 +398,7 @@ img {
             <div class="remember-form">
               <input type="checkbox">
               <span>Remember me</span> <br>
-              <a href="register.php">Register</a>
+              Don't have an account? <a href="register.php">Register</a>
             </div>
             <div class="forget-pass">
               <a href="#">Forgot Password ?</a>

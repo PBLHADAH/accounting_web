@@ -5,88 +5,105 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <style>
         body {
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 500px;
-            margin: 100px auto;
+            background-color: #f5f5f5;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
         }
-        
+
         h2 {
             text-align: center;
             margin-bottom: 30px;
         }
-        
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
         label {
             font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
         }
-        
+
         input[type="text"],
         input[type="password"] {
             width: 100%;
             padding: 10px;
-            border-radius: 5px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
-            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 14px;
         }
-        
+
         input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: #fff;
-            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
             border: none;
-        }
-        
-        input[type="submit"]:hover {
-            background-color: #0069d9;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
-        
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
         a {
+            color: #4CAF50;
             display: block;
             text-align: center;
-            margin-top: 20px;
-            color: #007bff;
+            margin-top: 10px;
+            font-size: 14px;
             text-decoration: none;
+        }
+
+        @media (max-width: 500px) {
+            form {
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Register</h2>
-        <form method="POST" action="register.php">
+    <h2>Register</h2>
+    <form method="POST" action="register.php">
+        <div class="mb-3">
             <label for="nama_lengkap">Nama Lengkap:</label>
             <input type="text" id="nama_lengkap" name="nama_lengkap" required>
-            
-            <label for="no_hp">No Hp:</label>
+        </div>
+        <div class="mb-3">
+            <label for="no_hp">No HP:</label>
             <input type="text" id="no_hp" name="no_hp" required>
-            
+        </div>
+        <div class="mb-3">
             <label for="alamat">Alamat:</label>
             <input type="text" id="alamat" name="alamat" required>
-            
+        </div>
+        <div class="mb-3">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
-            
+        </div>
+        <div class="mb-3">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            
+        </div>
+        <div class="mb-3">
             <label for="konfirmasi">Konfirmasi password:</label>
             <input type="password" id="konfirmasi" name="konfirmasi" required>
-            
-            <input type="submit" value="Register">
-        </form>
-        <a href="login.php">Login</a>
-    </div>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <a href="login.php">Login</a>
 </body>
 </html>
+
 
 <?php
 // Establish a connection to the database
