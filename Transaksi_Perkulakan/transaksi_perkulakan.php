@@ -1,19 +1,41 @@
-<?php
-include '../koneksi.php';
-
-// Retrieve data from the 'transaksi_perkulakan' table
-$sql = "SELECT * FROM transaksi_perkulakan";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Transaksi Perkulakan Table</title>
+    <title>Data Produk</title>
     <style>
-        table {
-            border-collapse: collapse;
+        .form-container {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="number"] {
             width: 100%;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
         }
 
         th, td {
@@ -22,47 +44,52 @@ $result = $conn->query($sql);
             border-bottom: 1px solid #ddd;
         }
 
-        form {
-            display: inline-block;
+        th {
+            background-color: #f5f5f5;
         }
     </style>
 </head>
 <body>
-<h2>Transaksi Perkulakan Table</h2>
-    <a href="create_transaksi_perkulakan.php">Create New Transaksi Perkulakan</a>
-    <br><br>
+    <h2>Data Produk</h2>
     <table>
         <tr>
-            <th>ID</th>
-            <th>Pegawai ID</th>
-            <th>Tanggal</th>
-            <th>Action</th>
+            <th>ID Produk</th>
+            <th>Nama Produk</th>
+            <th>Kuantitas</th>
+            <th>Aksi</th>
         </tr>
         <?php
-        // Display the data from the transaksi_perkulakan table
+        require '../koneksi.php';
+
+        // Mendapatkan data produk dari database
+        $sql = "SELECT * FROM produk";
+        $result = $conn->query($sql);
+
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row['id_transaksi_perkulakan'] . "</td>";
-                echo "<td>" . $row['pegawai_id_pegawai'] . "</td>";
-                echo "<td>" . $row['tanggal'] . "</td>";
-                echo "<td>";
-                echo "<form method='POST' action='delete_transaksi_perkulakan.php'>";
-                echo "<input type='hidden' name='id_transaksi_perkulakan' value='" . $row['id_transaksi_perkulakan'] . "'>";
-                echo "<input type='submit' value='Delete'>";
-                echo "</form>";
-                echo "</td>";
-                echo "</tr>";
+                $id_produk = $row["id_produk"];
+                $nama_produk = $row["nama_produk"];
+                $kuantitas = $row["kuantitas"];
+                ?>
+                <tr>
+                    <td><?php echo $id_produk; ?></td>
+                    <td><?php echo $nama_produk; ?></td>
+                    <td><?php echo $kuantitas; ?></td>
+                    <td>
+                        <a href="edit_produk.php?id=<?php echo $id_produk; ?>">Edit</a>
+                        <a href="delete_produk.php?id=<?php echo $id_produk; ?>">Hapus</a>
+                    </td>
+                </tr>
+                <?php
             }
         } else {
-            echo "<tr><td colspan='4'>No records found</td></tr>";
+            echo "Tidak ada data produk.";
         }
+
+        // Menutup koneksi database
+        $conn->close();
         ?>
     </table>
+    <button onclick="location.href='form_produk.php'" style="margin-top: 10px;">Tambah Produk</button>
 </body>
 </html>
-
-<?php
-// Close the database connection
-$conn->close();
-?>

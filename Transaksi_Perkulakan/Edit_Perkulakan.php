@@ -1,58 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Transaksi Perkulakan</title>
+    <title>Edit Produk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .container h2 {
+            margin-top: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h2>Edit Transaksi Perkulakan</h2>
-    <?php
-    // Establish a connection to the database
-    include '../koneksi.php';
+    <div class="container">
+        <h2>Edit Produk</h2>
+        <?php
+        require_once "../koneksi.php";
 
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        if (isset($_GET["id_transaksi_perkulakan"])) {
-            $id_transaksi_perkulakan = $_GET["id_transaksi_perkulakan"];
+        function sanitize($input)
+        {
+            global $conn;
+            $output = mysqli_real_escape_string($conn, $input);
+            $output = htmlspecialchars($output);
+            return $output;
+        }
 
-            $selectSql = "SELECT * FROM transaksi_perkulakan WHERE id_transaksi_perkulakan='$id_transaksi_perkulakan'";
-            $result = $conn->query($selectSql);
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $id_produk = sanitize($_POST["id_produk"]);
+            $nama_produk = sanitize($_POST["nama_produk"]);
+            $kuantitas = sanitize($_POST["kuantitas"]);
+            $sql = "UPDATE produk SET nama_produk='$nama_produk', kuantitas='$kuantitas' WHERE id_produk='$id_produk'";
 
-            if ($result->num_rows == 1) {
-                $row = $result->fetch_assoc();
-
-                echo "<form method='POST'>";
-                echo "<input type='hidden' name='id_transaksi_perkulakan' value='" . $row['id_transaksi_perkulakan'] . "'>";
-                echo "<label>Pegawai ID Pegawai:</label>";
-                echo "<input type='number' name='pegawai_id_pegawai' value='" . $row['pegawai_id_pegawai'] . "' required><br><br>";
-                echo "<label>Tanggal:</label>";
-                echo "<input type='datetime-local' name='tanggal' value='" . $row['tanggal'] . "' required><br><br>";
-                echo "<input type='submit' value='Update'>";
-                echo "</form>";
+            if ($conn->query($sql) === TRUE) {
+                header('Location: transaksi_perkulakan.php');
+                exit;
             } else {
-                echo "Record not found.";
+                echo "Error updating product: " . $conn->error;
             }
-        }
-    }
-
-    // Check if the form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Retrieve the entered data
-        $id_transaksi_perkulakan = $_POST['id_transaksi_perkulakan'];
-        $pegawai_id_pegawai = $_POST['pegawai_id_pegawai'];
-        $tanggal = $_POST['tanggal'];
-
-        // Update the transaction in the database
-        $updateSql = "UPDATE transaksi_perkulakan SET pegawai_id_pegawai='$pegawai_id_pegawai', tanggal='$tanggal' WHERE id_transaksi_perkulakan='$id_transaksi_perkulakan'";
-
-        if ($conn->query($updateSql) === TRUE) {
-            echo "Transaksi Perkulakan updated successfully.";
-            header("Location: transaksi_perkulakan.php");
         } else {
-            echo "Error updating Transaksi Perkulakan: " . $conn->error;
-        }
-    }
+            $id_produk = $_GET['id'];
 
-    // Close the database connection
-    $conn->close();
-    ?>
+            $sql = "SELECT * FROM produk WHERE id_produk='$id_produk'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+        ?>
+
+        <form action="edit_produk.php" method="post">
+            <div class="form-group">
+                <label for="nama_produk">Nama Produk:</label>
+                <input type="text" name="nama_produk" value="<?php echo $row['nama_produk']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="kuantitas">Kuantitas:</label>
+                <input type="number" name="kuantitas" value="<?php echo $row['kuantitas']; ?>">
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="id_produk" value="<?php echo $row['id_produk']; ?>">
+                <input type="submit" value="Update">
+            </div>
+        </form>
+
+        <?php
+        }
+
+        $conn->close();
+        ?>
+    </div>
 </body>
 </html>

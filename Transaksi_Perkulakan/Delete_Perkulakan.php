@@ -1,25 +1,18 @@
 <?php
-// Establish a connection to the database
 require '../koneksi.php';
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    // Retrieve the transaction ID from the URL parameter
-    if (isset($_GET["id_transaksi_perkulakan"])) {
-        $id_transaksi_perkulakan = $_GET["id_transaksi_perkulakan"];
-
-        // Delete the transaction from the database
-        $deleteSql = "DELETE FROM transaksi_perkulakan WHERE id_transaksi_perkulakan='$id_transaksi_perkulakan'";
-        if ($conn->query($deleteSql) === TRUE) {
-            echo "Transaction deleted successfully.";
-            header("Location: transaksi_perkulakan.php");
-            exit();
-        } else {
-            echo "Error deleting transaction: " . $conn->error;
-        }
+if(isset($_GET['id'])) {
+    header('Location: transaksi_perkulakan.php');
+    $id_produk = $_GET['id'];
+    
+    // Menghapus data produk dari database
+    $sql = "DELETE FROM produk WHERE id_produk = '$id_produk'";
+    if ($conn->query($sql) === TRUE) {
+        echo "Data produk berhasil dihapus.";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
 
-// Close the database connection
+// Menutup koneksi database
 $conn->close();
-?>
