@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             // Passwords match, redirect to a welcome page
+            session_start();
             $_SESSION['userdata'] = $row;
             header("Location: index.php");
             exit();

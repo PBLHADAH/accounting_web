@@ -7,7 +7,7 @@
 
   <?php
   // Koneksi ke database
-  require '../koneksi.php';
+  require 'koneksi.php';
 
   // Membuat koneksi ke database
   $conn = mysqli_connect($servername, $username, $password, $dbname);

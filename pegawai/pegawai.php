@@ -1,5 +1,5 @@
-<?php
-include '../koneksi.php';
+ <?php
+include 'koneksi.php';
 
 // Retrieve data from the 'pegawai' table
 $sql = "SELECT * FROM pegawai";
@@ -10,26 +10,11 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Tabel Pegawai Detail</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        form {
-            display: inline-block;
-        }
-    </style>
 </head>
 <body>
     <h2>Tabel Pegawai Detail</h2>
-    <a href="create_pegawai.php">Tambah pegawai</a>
+    <a href="pegawai/create_pegawai.php">Tambah pegawai</a>
     <table>
         <thead>
             <tr>
@@ -54,8 +39,8 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['username'] . "</td>";
                 echo "<td>" . $row['jabatan'] . "</td>";
                 echo "<td>";
-                echo "<a href=\"update_pegawai.php?id_pegawai=" . $row['id_pegawai'] . "\">Edit</a>";
-                echo "<a href=\"delete_pegawai.php?id_pegawai=" . $row['id_pegawai'] . "\" onclick=\"return confirm('Apakah anda yakin?');\">Delete</a>";
+                echo "<a href=\"pegawai/update_pegawai.php?id_pegawai=" . $row['id_pegawai'] . "\">Edit</a>";
+                echo "<a href=\"pegawai/delete_pegawai.php?id_pegawai=" . $row['id_pegawai'] . "\" onclick=\"return confirm('Apakah anda yakin?');\">Delete</a>";
                 echo "</td>";
                 echo "</tr>";
             }
