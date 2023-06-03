@@ -325,7 +325,7 @@ h1 {
       <!-- Logout -->
       <div class="social_media">
         <ul>
-          <button id="logout-btn">
+          <button id="logout-btn" onclick="location.href = 'logout.php';">
             <span class="logout-icon"></span>
             <i class="fa-solid fa-right-from-bracket"></i>
             Logout
