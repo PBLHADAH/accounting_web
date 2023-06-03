@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         if ($conn->query($deleteSql) === TRUE) {
             echo "Record deleted successfully.";
-            header("Location: pegawai.php");
+            header("Location: ../pegawai.php");
         } else {
             echo "Error deleting record: " . $conn->error;
         }
