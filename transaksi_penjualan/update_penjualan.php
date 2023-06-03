@@ -63,7 +63,7 @@
 
         $sql = "SELECT * FROM transaksi_lainnya WHERE id_transaksi_penjualan_lainnya='$id_transaksi_penjualan'";
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
+        $row = $result->fetch_assoc();}
     ?>
 
     <form action="edit_transaksi.php" method="post">
@@ -107,6 +107,7 @@ if (isset($_POST['submit'])) {
 
     // Membuat koneksi ke database
     $conn = mysqli_connect($servername, $username, $password, $dbname);
+
 
     // Memeriksa koneksi database
     if (!$conn) {
