@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>tambah penjualan</title>
+    <title>tambah penjualan.</title>
     <style>
         /* Style untuk button */
         button {
