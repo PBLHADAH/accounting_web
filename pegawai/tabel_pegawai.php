@@ -1,6 +1,6 @@
 <?php
 // Database connection details
-require '../koneksi.php';
+require 'koneksi.php';
 
 // Query to retrieve data from the 'pegawai' table
 $query = "SELECT * FROM pegawai";

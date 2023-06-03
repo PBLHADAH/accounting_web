@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->query($sql);
 
             // Redirect the user back to the registration page
-            header("Location: pegawai.php");
+            header("Location: ../pegawai.php");
             exit();
         } else {
             echo "<h2>Password tidak sesuai!</h2>";
