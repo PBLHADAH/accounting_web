@@ -103,7 +103,7 @@
     <a href="login.php">Login</a>
 </body>
 </html>
-
+ 
 
 <?php
 // Establish a connection to the database
