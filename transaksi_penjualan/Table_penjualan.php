@@ -76,6 +76,7 @@ $result = $conn->query($sql);
                 <th>ID</th>
                 <th>penjualan retail</th>
                 <th>penjualan grosir</th>
+                <th>penjualan Aksesoris</th>
                 <th>Pegawai ID</th>
                 <th>Mnajer ID</th>
                 <th>Tanggal</th>
@@ -89,6 +90,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['id_transaksi_penjualan'] . "</td>";
                 echo "<td>" . $row['penjualan_retail'] . "</td>";
                 echo "<td>" . $row['penjualan_grosir'] . "</td>";
+                echo "<td>" . $row['penjualan_aksesoris'] . "</td>";
                 echo "<td>" . $row['pegawai_id_pegawai'] . "</td>";
                 echo "<td>" . $row['pegawai_id_manajer'] . "</td>";
                 echo "<td>" . $row['tanggal'] . "</td>";
