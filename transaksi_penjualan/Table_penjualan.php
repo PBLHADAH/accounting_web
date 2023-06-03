@@ -29,7 +29,7 @@ $result = $conn->query($sql);
     .add-link {
             display: inline-block;
             padding: 10px 20px;
-            background-color: ##1d54bf;
+            background-color: #1d54bf;
             color: white;
             text-decoration: none;
             border-radius: 4px;
