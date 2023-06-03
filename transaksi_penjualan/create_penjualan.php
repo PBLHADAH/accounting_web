@@ -36,11 +36,11 @@
     <h1>Transaksi Penjualan</h1>
     <form action="" method="POST">
         <label for="penjualan_retail">Retail :</label>
-        <input type="number" id="penjualan_retail" name="penjualan_retail" required><br><br>
+        <input type="text" id="penjualan_retail" name="penjualan_retail" required><br><br>
         <label for="penjualan_grosir">Grosir :</label>
-        <input type="number" id="penjualan_grosir" name="penjualan_grosir" required><br><br>
+        <input type="text" id="penjualan_grosir" name="penjualan_grosir" required><br><br>
         <label for="penjualan_aksesoris">Aksesoris :</label>
-        <input type="number" id="penjualan_aksesoris" name="penjualan_aksesoris" required><br><br>
+        <input type="text" id="penjualan_aksesoris" name="penjualan_aksesoris" required><br><br>
         <label for="pegawai_id_pegawai">Pegawai :</label>
         <select id="pegawai_id_pegawai" name="pegawai_id_pegawai" required>
             <option value="">Pilih pegawai</option>
