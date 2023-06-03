@@ -98,7 +98,7 @@
 
         <input type="hidden" id="tanggal" name="tanggal" value="<?php echo date('Y-m-d'); ?>">
 
-        <button onclick="location.href='penjualan.php'">Kembali</button>
+        <button onclick="location.href='Table_penjualan.php'">Kembali</button>
         <input type="submit" name="submit" value="Konfirmasi">
     </form>
 </body>
@@ -131,7 +131,7 @@ $sql = "INSERT INTO transaksi_penjualan (penjualan_retail, penjualan_grosir, pen
 
     if (mysqli_query($conn, $sql)) {
         // Penyimpanan berhasil
-        header("Location: penjualan.php"); // Redirect kembali ke halaman kelolaproduk.php
+        header("Location: Table_penjualan.php"); // Redirect kembali ke halaman kelolaproduk.php
         exit();
     } else {
         // Terjadi kesalahan dalam penyimpanan data
