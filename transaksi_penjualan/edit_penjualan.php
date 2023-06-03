@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head
     <title>Edit Transaction</title>
 </head>
 <body>
