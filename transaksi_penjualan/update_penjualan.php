@@ -6,7 +6,7 @@
 <body>
     <h2>Edit Transaction</h2>
     <?php
-    require_once "../koneksi.php";
+    require_once "koneksi.php";
 
     function sanitize($input)
     {
@@ -17,43 +17,51 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $id_transaksi_penjualan = sanitize($_POST["id_transaksi_penjualan"]);
-        $penjualan_retail = sanitize($_POST["penjualan_retail"]);
-        $penjualan_aksesoris = sanitize($_POST["penjualan_aksesoris"]);
-        $pegawai_id_pegawai = sanitize($_POST["pegawai_id_pegawai"]);
-        $pegawai_id_manajer = sanitize($_POST["pegawai_id_pegawai"]);
-        
+        $id_transaksi = sanitize($_POST["id_transaksi"]);
+        $deskripsi = sanitize($_POST["deskripsi"]);
+        $nominal = sanitize($_POST["nominal"]);
+        $pegawai_id = sanitize($_POST["pegawai_id"]);
 
-
-        $sql = "UPDATE transaksi_lainnya SET penjualan_retail='$penjualan_retail', penjualan_aksesoris='$penjualan_aksesoris', pegawai_id_pegawai_pegawai='$pegawai_id_pegawai', WHERE id_transaksi_penjualan_lainnya='$id_transaksi_penjualan'";
+        $sql = "UPDATE transaksi_lainnya SET deskripsi='$deskripsi', nominal='$nominal', pegawai_id_pegawai='$pegawai_id' WHERE id_transaksi_penjualan='$id_transaksi'";
 
         if ($conn->query($sql) === TRUE) {
-            header('Location: transaksi_lainnya.php'); // ganti
+            header('Location: Table_penjualan.php');
+            exit();
         } else {
             echo "Error updating transaction: " . $conn->error;
         }
     } else {
-        $id_transaksi_penjualan = $_GET['id_transaksi_penjualan'];
+        if (isset($_GET['id_transaksi'])) {
+            $id_transaksi = sanitize($_GET['id_transaksi']);
 
-        $sql = "SELECT * FROM transaksi_lainnya WHERE id_transaksi_penjualan_lainnya='$id_transaksi_penjualan'";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
+            $sql = "SELECT * FROM transaksi_lainnya WHERE id_transaksi_penjualan='$id_transaksi'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+            } else {
+                echo "Transaction not found.";
+                exit();
+            }
+        } else {
+            echo "Invalid request.";
+            exit();
+        }
     ?>
-
     <form action="edit_transaksi.php" method="post">
-        <input type="hidden" name="id_transaksi_penjualan" value="<?php echo $row['id_transaksi_penjualan_lainnya']; ?>">
-        <label for="penjualan_retail">penjualan_retail:</label><br>
-        <input type="text" name="penjualan_retail" value="<?php echo $row['penjualan_retail']; ?>"><br><br>
-        <label for="penjualan_aksesoris">penjualan_aksesoris:</label><br>
-        <input type="number" name="penjualan_aksesoris" value="<?php echo $row['penjualan_aksesoris']; ?>"><br><br>
-        <label for="pegawai_id_pegawai">Pegawai ID:</label><br>
-        <select id="pegawai_id_pegawai" name="pegawai_id_pegawai" required>
+        <input type="hidden" name="id_transaksi" value="<?php echo $row['id_transaksi_penjualan']; ?>">
+        <label for="deskripsi">Deskripsi:</label><br>
+        <input type="text" name="deskripsi" value="<?php echo $row['deskripsi']; ?>"><br><br>
+        <label for="nominal">Nominal:</label><br>
+        <input type="number" name="nominal" value="<?php echo $row['nominal']; ?>"><br><br>
+        <label for="pegawai_id">Pegawai ID:</label><br>
+        <select id="pegawai_id" name="pegawai_id" required>
         <?php
         $sql = "SELECT id_pegawai, nama FROM pegawai";
         $result = mysqli_query($conn, $sql);
 
         while ($pegawai = mysqli_fetch_assoc($result)) {
-            $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_pegawai_pegawai']) ? "selected" : "";
+            $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_pegawai']) ? "selected" : "";
             echo "<option value='" . $pegawai['id_pegawai'] . "' " . $selected . ">" . $pegawai['nama'] . "</option>";
         }
         ?>
