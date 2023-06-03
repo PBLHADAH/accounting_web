@@ -1,6 +1,6 @@
 <?php
 
-require "koneksi.php";
+require "../koneksi.php";
 
 // Query to retrieve data from the transaksi_lainnya table
 $sql = "SELECT * FROM transaksi_lainnya";
