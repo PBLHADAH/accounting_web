@@ -1,5 +1,5 @@
 <?php
-require_once "../koneksi.php";
+require_once "../koneksi.php";  
 
 $sql = "SELECT * FROM transaksi_penjualan";
 $result = $conn->query($sql);
