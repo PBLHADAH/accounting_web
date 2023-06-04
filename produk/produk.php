@@ -18,16 +18,15 @@
   // Memeriksa apakah ada produk yang ditemukan
   if (mysqli_num_rows($result) > 0) {
     echo "<table>";
-    echo "<tr><th>ID Produk</th><th>Nama Produk</th><th>Harga Produk</th><th>Supplier</th><th>Aksi</th></tr>";
+    echo "<tr><th>ID Produk</th><th>Nama Produk</th><th>Harga Produk</th><th>Aksi</th></tr>";
     // Menampilkan data produk ke dalam tabel
     while ($row = mysqli_fetch_assoc($result)) {
       echo "<tr>";
       echo "<td>" . $row['id_produk'] . "</td>";
       echo "<td>" . $row['nama_produk'] . "</td>";
       echo "<td>" . $row['harga_produk'] . "</td>";
-      echo "<td>" . $row['supplier'] . "</td>";
-      echo "<td><a href='update_produk.php?id_produk=" . $row['id_produk'] . "'>Edit</a> | ";
-      echo "<form method='POST' action='delete_produk.php'>";
+      echo "<td><a href='produk/update_produk.php?id_produk=" . $row['id_produk'] . "'>Edit</a> | ";
+      echo "<form method='POST' action='produk/delete_produk.php'>";
       echo "<input type='hidden' name='id_produk' value='" . $row['id_produk'] . "'>";
       echo "<input type='submit' name='delete' value='Hapus'></form></td>";
       echo "</tr>";

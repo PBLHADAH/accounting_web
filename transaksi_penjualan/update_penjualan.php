@@ -81,20 +81,6 @@
                     }
                     ?>
                 </select><br><br>
-                <label for="pegawai_id_manajer">Manajer:</label>
-                <select id="pegawai_id_manajer" name="pegawai_id_manajer" required>
-                    <?php
-                    // Query untuk mengambil data pegawai dengan jabatan "manajer" dari tabel
-                    $sql = "SELECT id_pegawai, nama FROM pegawai WHERE jabatan = 'manajer'";
-                    $result = mysqli_query($conn, $sql);
-
-                    // Menghasilkan opsi dropdown berdasarkan data pegawai dengan jabatan "manajer"
-                    while ($pegawai = mysqli_fetch_assoc($result)) {
-                        $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_manajer']) ? "selected" : "";
-                        echo "<option value='" . $pegawai['id_pegawai'] . "' $selected>" . $pegawai['nama'] . "</option>";
-                    }
-                    ?>
-                </select><br><br>
                 <input type="hidden" id="tanggal" name="tanggal" value="<?php echo $row['tanggal']; ?>">
                 <button onclick="location.href='Table_penjualan.php'">Kembali</button>
                 <input type="submit" name="submit" value="Simpan Perubahan">
@@ -116,7 +102,6 @@
         $penjualan_grosir = $_POST['penjualan_grosir'];
         $penjualan_aksesoris = $_POST['penjualan_aksesoris'];
         $pegawai_id_pegawai = $_POST['pegawai_id_pegawai'];
-        $pegawai_id_manajer = $_POST['pegawai_id_manajer'];
         $tanggal = $_POST['tanggal'];
 
         // Koneksi ke database
@@ -131,11 +116,11 @@
         }
 
         // Query untuk mengupdate data transaksi berdasarkan ID transaksi
-        $sql = "UPDATE transaksi_penjualan SET penjualan_retail='$penjualan_retail', penjualan_grosir='$penjualan_grosir', penjualan_aksesoris='$penjualan_aksesoris', pegawai_id_pegawai='$pegawai_id_pegawai', pegawai_id_manajer='$pegawai_id_manajer', tanggal='$tanggal' WHERE id_transaksi_penjualan='$id_transaksi'";
+        $sql = "UPDATE transaksi_penjualan SET penjualan_retail='$penjualan_retail', penjualan_grosir='$penjualan_grosir', penjualan_aksesoris='$penjualan_aksesoris', pegawai_id_pegawai='$pegawai_id_pegawai', tanggal='$tanggal' WHERE id_transaksi_penjualan='$id_transaksi'";
 
         if (mysqli_query($conn, $sql)) {
             // Perubahan berhasil
-            header("Location: Table_penjualan.php"); // Redirect kembali ke halaman Table_penjualan.php
+            header("Location: ../penjualan.php"); // Redirect kembali ke halaman Table_penjualan.php
             exit();
         } else {
             // Terjadi kesalahan dalam melakukan perubahan data

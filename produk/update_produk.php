@@ -11,13 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $id_produk = $_POST['id_produk'];
   $nama_produk = $_POST['nama_produk'];
   $harga_produk = $_POST['harga_produk'];
-  $supplier = $_POST['supplier'];
 
   // Query untuk melakukan update data produk
-  $sql = "UPDATE produk SET nama_produk='$nama_produk', harga_produk='$harga_produk', supplier='$supplier' WHERE id_produk='$id_produk'";
+  $sql = "UPDATE produk SET nama_produk='$nama_produk', harga_produk='$harga_produk' WHERE id_produk='$id_produk'";
   if (mysqli_query($conn, $sql)) {
     echo "Data produk berhasil diupdate.";
-    header('location: produk.php');
+    header('location: ../produk.php');
   } else {
     echo "Terjadi kesalahan saat melakukan update data produk: " . mysqli_error($conn);
   }
@@ -46,8 +45,6 @@ if (mysqli_num_rows($result) == 1) {
     <input type="text" name="nama_produk" value="<?php echo $row['nama_produk']; ?>"><br>
     <label for="harga_produk">Harga Produk:</label>
     <input type="text" name="harga_produk" value="<?php echo $row['harga_produk']; ?>"><br>
-    <label for="supplier">Supplier:</label>
-    <input type="text" name="supplier" value="<?php echo $row['supplier']; ?>"><br>
     <input type="submit" name="update" value="Update">
   </form>
 

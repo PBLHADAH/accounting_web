@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["id_transaksi_lainnya"] . "</td>";
         echo "<td>" . $row["deskripsi"] . "</td>";
         echo "<td>" . $row["nominal"] . "</td>";
-        echo "<td>" . $row["pegawai_id_pegawai"] . "</td>";
+        echo "<td>" . $row["pegawai_id_pencatat"] . "</td>";
         echo "<td>" . $row["tanggal"] . "</td>";
         echo "</tr>";
     }

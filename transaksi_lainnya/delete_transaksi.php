@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $deleteSql = "DELETE FROM transaksi_lainnya WHERE id_transaksi_lainnya='$id_transaksi'";
 
         if ($conn->query($deleteSql) === TRUE) {
-            header('Location: transaksi_lainnya.php'); // ganti
+            header('Location: ../lainnya.php'); // ganti
         } else {
             echo "Error deleting transaction: " . $conn->error;
         }

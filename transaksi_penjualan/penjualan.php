@@ -7,7 +7,26 @@ $sql = "SELECT tp.*, p1.nama AS nama_pegawai, p2.nama AS nama_manajer
         INNER JOIN pegawai p2 ON tp.pegawai_id_pencatat = p2.id_pegawai";
 $result = $conn->query($sql);
 ?>
-<table>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penjualan</title>
+    <style>
+        /* CSS styles */
+
+        /* ... */
+
+    </style>
+</head>
+<body>
+    <!-- HTML content -->
+
+    <div class="header-container">
+        <h2>Penjualan</h2>
+        <a href="transaksi_penjualan/create_penjualan.php" class="add-link">Tambah Penjualan</a>
+    </div>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -32,12 +51,22 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['nama_manajer'] . "</td>";
                 echo "<td>" . $row['tanggal'] . "</td>";
                 echo "<td>";
-                echo "<a href=\"update_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\">Edit</a>";
+                echo "<a href=\"transaksi_penjualan/update_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\">Edit</a>";
                 echo "<span class=\"action-separator\">|</span>";
-                echo "<a href=\"delete_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
+                echo "<a href=\"transaksi_penjualan/delete_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
                 echo "</td>";
                 echo "</tr>";
             }
             ?>
         </tbody>
     </table>
+
+    <!-- ... -->
+
+</body>
+</html>
+
+<?php
+$result->close();
+$conn->close();
+?>

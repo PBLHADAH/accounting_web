@@ -1,5 +1,5 @@
 <?php
-require_once "../koneksi.php";
+require_once "koneksi.php";
 
 $sql = "SELECT * FROM transaksi_lainnya";
 $result = $conn->query($sql);
@@ -28,28 +28,30 @@ $result = $conn->query($sql);
 </head>
 <body>
     <h2>Transactions</h2>
-    <a href="create_transaksi.php">Create Transaction</a>
+    <a href="transaksi_lainnya/create_transaksi.php">Create Transaction</a>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Deskripsi</th>
                 <th>Nominal</th>
-                <th>Pegawai ID</th>
+                <th>Pencatat</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php
             while ($row = $result->fetch_assoc()) {
+                $pencatat = mysqli_query($conn, "SELECT nama FROM pegawai WHERE id_pegawai=" . $row['pegawai_id_pencatat']);
+                $pencatat_hasil = $pencatat->fetch_assoc();
                 echo "<tr>";
                 echo "<td>" . $row['id_transaksi_lainnya'] . "</td>";
                 echo "<td>" . $row['deskripsi'] . "</td>";
                 echo "<td>" . $row['nominal'] . "</td>";
-                echo "<td>" . $row['pegawai_id_pegawai'] . "</td>";
+                echo "<td>" . $pencatat_hasil['nama'] . "</td>";
                 echo "<td>";
-                echo "<a href=\"edit_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\">Edit</a>";
-                echo "<a href=\"delete_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
+                echo "<a href=\"transaksi_lainnya/edit_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\">Edit</a>";
+                echo "<a href=\"transaksi_lainnya/delete_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
                 echo "</td>";
                 echo "</tr>";
             }

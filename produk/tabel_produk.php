@@ -24,14 +24,13 @@
   // Memeriksa apakah ada produk yang ditemukan
   if (mysqli_num_rows($result) > 0) {
     echo "<table>";
-    echo "<tr><th>ID Produk</th><th>Nama Produk</th><th>Harga Produk</th><th>Supplier</th></tr>";
+    echo "<tr><th>ID Produk</th><th>Nama Produk</th><th>Harga Produk</th></tr>";
     // Menampilkan data produk ke dalam tabel
     while ($row = mysqli_fetch_assoc($result)) {
       echo "<tr>";
       echo "<td>" . $row['id_produk'] . "</td>";
       echo "<td>" . $row['nama_produk'] . "</td>";
       echo "<td>" . $row['harga_produk'] . "</td>";
-      echo "<td>" . $row['supplier'] . "</td>";
       echo "</tr>";
     }
     echo "</table>";

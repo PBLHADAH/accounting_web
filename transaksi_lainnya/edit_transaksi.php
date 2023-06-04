@@ -20,12 +20,11 @@
         $id_transaksi = sanitize($_POST["id_transaksi"]);
         $deskripsi = sanitize($_POST["deskripsi"]);
         $nominal = sanitize($_POST["nominal"]);
-        $pegawai_id = sanitize($_POST["pegawai_id"]);
 
-        $sql = "UPDATE transaksi_lainnya SET deskripsi='$deskripsi', nominal='$nominal', pegawai_id_pegawai='$pegawai_id' WHERE id_transaksi_lainnya='$id_transaksi'";
+        $sql = "UPDATE transaksi_lainnya SET deskripsi='$deskripsi', nominal='$nominal' WHERE id_transaksi_lainnya='$id_transaksi'";
 
         if ($conn->query($sql) === TRUE) {
-            header('Location: transaksi_lainnya.php'); // ganti
+            header('Location: ../lainnya.php'); // ganti
         } else {
             echo "Error updating transaction: " . $conn->error;
         }
@@ -43,18 +42,6 @@
         <input type="text" name="deskripsi" value="<?php echo $row['deskripsi']; ?>"><br><br>
         <label for="nominal">Nominal:</label><br>
         <input type="number" name="nominal" value="<?php echo $row['nominal']; ?>"><br><br>
-        <label for="pegawai_id">Pegawai ID:</label><br>
-        <select id="pegawai_id" name="pegawai_id" required>
-        <?php
-        $sql = "SELECT id_pegawai, nama FROM pegawai";
-        $result = mysqli_query($conn, $sql);
-
-        while ($pegawai = mysqli_fetch_assoc($result)) {
-            $selected = ($pegawai['id_pegawai'] == $row['pegawai_id_pegawai']) ? "selected" : "";
-            echo "<option value='" . $pegawai['id_pegawai'] . "' " . $selected . ">" . $pegawai['nama'] . "</option>";
-        }
-        ?>
-        </select><br><br>
         <input type="submit" value="Update">
     </form>
 

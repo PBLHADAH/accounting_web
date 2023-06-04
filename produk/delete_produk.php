@@ -14,7 +14,7 @@ if (isset($_POST['delete'])) {
   $sql = "DELETE FROM produk WHERE id_produk = '$id_produk'";
   if (mysqli_query($conn, $sql)) {
     // Penghapusan berhasil
-    header("Location: produk.php"); // Redirect kembali ke halaman produk.php
+    header("Location: ../produk.php"); // Redirect kembali ke halaman produk.php
   } else {
     // Terjadi kesalahan dalam penghapusan data
     echo "Gagal menghapus data: " . mysqli_error($conn);

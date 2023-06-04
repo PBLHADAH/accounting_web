@@ -12,8 +12,6 @@
     <label for="harga_produk">Harga Produk:</label>
     <input type="text" id="harga_produk" name="harga_produk" required><br><br>
     
-    <label for="supplier">Supplier:</label>
-    <input type="text" id="supplier" name="supplier" required><br><br>
     
     <input type="submit" name="konfirmasi" value="Konfirmasi">
     <button onclick="location.href='produk.php'">Kembali</button>
@@ -25,16 +23,15 @@
 if (isset($_POST['konfirmasi'])) {
   $nama_produk = $_POST['nama_produk'];
   $harga_produk = $_POST['harga_produk'];
-  $supplier = $_POST['supplier'];
 
   // Koneksi ke database
   require '../koneksi.php';
 
   // Query untuk menyimpan data produk ke tabel
-  $sql = "INSERT INTO produk (nama_produk, harga_produk, supplier) VALUES ('$nama_produk', '$harga_produk', '$supplier')";
+  $sql = "INSERT INTO produk (nama_produk, harga_produk) VALUES ('$nama_produk', '$harga_produk')";
   if (mysqli_query($conn, $sql)) {
     // Penyimpanan berhasil
-    echo "Data produk berhasil disimpan.";
+    header("Location: ../produk.php"); // Redirect kembali ke halaman produk.php
   } else {
     // Terjadi kesalahan dalam penyimpanan data
     echo "Gagal menyimpan data: " . mysqli_error($conn);

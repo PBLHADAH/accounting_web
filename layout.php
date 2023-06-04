@@ -316,9 +316,12 @@ h1 {
         <ul>
           <li><i class="fa-regular fa-user"></i><a href="#"><?php echo $_SESSION["userdata"]["nama"]?></a></li>
           <li><i class="fa-solid fa-house"></i><a href="index.php">Home</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="penjualan.php">Transaksi Penjualan</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="perkulakan.php">Transaksi Perkulakan</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="lainnya.php">Transaksi Lainnya</a></li>
           <li><i class="fa-solid fa-book"></i><a href="pegawai.php">Kelola Pegawai</a></li>
-          <li><i class="fa-solid fa-book"></i><a href="#">Kelola Transaksi</a></li>
           <li><i class="fa-solid fa-book"></i><a href="produk.php">Kelola Produk</a></li>
+          <li><i class="fa-solid fa-book"></i><a href="supplier.php">Kelola Supplier</a></li>
         </ul>
       </div>
 

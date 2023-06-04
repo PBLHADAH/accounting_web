@@ -14,11 +14,11 @@
         <label>Alamat:</label>
         <input type="text" name="alamat" required><br><br>
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" id="username" name="username" ><br><br>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" id="password" name="password" ><br><br>
         <label for="password">Konfirmasi password:</label>
-        <input type="password" name="konfirmasi" required><br><br>
+        <input type="password" name="konfirmasi" ><br><br>
         <select name="jabatan">
             <option value="pegawai">Pegawai</option>
             <option value="manajer">Manajer</option>

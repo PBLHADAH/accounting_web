@@ -1,2 +1,2 @@
-INSERT INTO `db_aldyz`.`pegawai` (`id_pegawai`, `nama`, `no_hp`, `alamat`, `username`, `password`, `jabatan`)
-VALUES (1, 'root', 'root', 'root', 'root', 'root', 'root');
+INSERT INTO `pegawai` (`id_pegawai`, `nama`, `no_hp`, `alamat`, `username`, `password`, `jabatan`) VALUES
+(1, 'root', 'root', 'root', 'root', '$2y$10$AaBNNCvBMa7ydrKpRCOhTeNDbNxoDD9mDutPZYVKpJSEplQiM.Gvi', 'manajer');
