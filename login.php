@@ -1,3 +1,39 @@
+<!-- kodingan php -->
+<?php
+// Establish a connection to the database
+require 'koneksi.php';
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Retrieve the entered username and password
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Prepare and execute the SQL query
+    $sql = "SELECT * FROM pegawai WHERE username = '$username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // The user exists, compare the hashed passwords
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['password'])) {
+            // Passwords match, redirect to a welcome page
+            session_start();
+            $_SESSION['userdata'] = $row;
+            header('Location: index.php');
+            exit();
+        } else {
+            // Invalid password, show an error message
+            echo 'Invalid password.';
+        }
+    } else {
+        // Invalid username, show an error message
+        echo 'Invalid username.';
+    }
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -391,9 +427,9 @@ img {
       <div class="container">
     <h1>Login!</h1>
         <div class="login-form">
-          <form action="">
-            <input type="email" placeholder="E-mail Address">
-            <input type="password" placeholder="Password">
+          <form action="" method="post">
+            <input type="text" placeholder="Username" name="username">
+            <input type="password" placeholder="Password" name="password">
 
             <div class="remember-form">
               <input type="checkbox">
@@ -415,42 +451,3 @@ img {
     
 </body>
 </html>
-
-
-<!-- kodingan php -->
-<?php
-// Establish a connection to the database
-require 'koneksi.php';
-
-// Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Retrieve the entered username and password
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Prepare and execute the SQL query
-    $sql = "SELECT * FROM pegawai WHERE username = '$username'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // The user exists, compare the hashed passwords
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            // Passwords match, redirect to a welcome page
-            session_start();
-            $_SESSION['userdata'] = $row;
-            header('Location: index.php');
-            exit();
-        } else {
-            // Invalid password, show an error message
-            echo 'Invalid password.';
-        }
-    } else {
-        // Invalid username, show an error message
-        echo 'Invalid username.';
-    }
-}
-
-$conn->close();
-?>
-

@@ -5,11 +5,11 @@
 </head>
 <body>
   <h1>Kelola Produk</h1>
-  <button onclick="location.href='create_produk.php'">Tambah Produk</button> <!-- Tambahkan tombol Tambah Produk -->
+  <button onclick="location.href='produk/create_produk.php'">Tambah Produk</button> <!-- Tambahkan tombol Tambah Produk -->
 
   <?php
   // Koneksi ke database
-  require '../koneksi.php';
+  require 'koneksi.php';
 
   // Query untuk mendapatkan data semua produk
   $sql = "SELECT * FROM produk";
