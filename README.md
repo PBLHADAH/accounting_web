@@ -8,7 +8,8 @@ https://1drv.ms/x/s!AimyVrapEnuKglyMcogvNbtCgsku?e=ktQRSX
 4. DDL ✅
 5. Flowchart ✅
 https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
-6. Figma ✅
+6. Figma ✅ 
+https://www.figma.com/file/MQefGWNwbWz5J8oazmlz8O/Horizon-UI---Trendiest-Open-Source-Admin-Template-Dashboard-(Community)-(Community)-(Copy)-(Copy)?type=design&node-id=0-1&t=7txbNuL5S51I1yyc-0
 7. Front end ❌
 8. Back end ❌
 9. Rpp ✅
@@ -32,11 +33,11 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
    2. Create penjualan ✅
    3. Edit penjualan ✅
    4. Delete penjualan ✅
-4. Pengelolaan Transaksi Perkulakan[Dana] ❌
-   1. Tabel perkulakan ❌
-   2. Create perkulakan ❌
-   3. Edit perkulakan ❌
-   4. Delete perkulakan ❌
+4. Pengelolaan Transaksi Perkulakan[Dana] ✅
+   1. Tabel perkulakan ✅
+   2. Create perkulakan ✅
+   3. Edit perkulakan ✅
+   4. Delete perkulakan✅
 5. Pengelolaan Transaksi lainnya [Holil]✅
    1. Tabel lainnya ✅
    2. Create lainnya ✅
