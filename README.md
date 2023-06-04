@@ -14,6 +14,7 @@ https://www.figma.com/file/MQefGWNwbWz5J8oazmlz8O/Horizon-UI---Trendiest-Open-So
 8. Back end ❌
 9. Rpp ✅
 10. Laporan Akhir ❌
+https://docs.google.com/document/d/1CRcbeVe_Eh2O4blYHSAvgczBXrFk3-mIxtlp7_PC1Qg/edit
 
 
 ## TO DO LIST CODINGAN:
