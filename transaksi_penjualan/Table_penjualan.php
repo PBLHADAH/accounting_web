@@ -1,7 +1,10 @@
 <?php
 require_once "../koneksi.php";  
 
-$sql = "SELECT * FROM transaksi_penjualan";
+$sql = "SELECT tp.*, p1.nama AS nama_pegawai, p2.nama AS nama_manajer
+        FROM transaksi_penjualan tp
+        INNER JOIN pegawai p1 ON tp.pegawai_id_pegawai = p1.id_pegawai
+        INNER JOIN pegawai p2 ON tp.pegawai_id_manajer = p2.id_pegawai";
 $result = $conn->query($sql);
 ?>
 
@@ -10,62 +13,15 @@ $result = $conn->query($sql);
 <head>
     <title>Penjualan</title>
     <style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
-		th, td {
-			padding: 8px;
-			text-align: left;
-			border-bottom: 1px solid #ddd;
-		}
-		tr:hover {
-			background-color: #f5f5f5;
-		}
-		th {
-			background-color: #353A40;
-			color: white;
-		}
-    .add-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #1d54bf;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .add-link:hover {
-            background-color: #1d54bf;
-        }
-        /* Style untuk judul dan tautan */
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .add-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #2268EF;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .add-link:hover {
-            background-color: #1d54bf;
-        }
-        /* Style untuk judul dan tautan */
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .action-separator {
-            margin: 0 5px;
-        }
-	</style>
+        /* CSS styles */
+
+        /* ... */
+
+    </style>
 </head>
 <body>
+    <!-- HTML content -->
+
     <div class="header-container">
         <h2>Penjualan</h2>
         <a href="create_penjualan.php" class="add-link">Tambah Penjualan</a>
@@ -77,8 +33,8 @@ $result = $conn->query($sql);
                 <th>penjualan retail</th>
                 <th>penjualan grosir</th>
                 <th>penjualan Aksesoris</th>
-                <th>Pegawai ID</th>
-                <th>Mnajer ID</th>
+                <th>Pegawai</th>
+                <th>Manajer</th>
                 <th>Tanggal</th>
                 <th>Action</th>
             </tr>
@@ -91,8 +47,8 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['penjualan_retail'] . "</td>";
                 echo "<td>" . $row['penjualan_grosir'] . "</td>";
                 echo "<td>" . $row['penjualan_aksesoris'] . "</td>";
-                echo "<td>" . $row['pegawai_id_pegawai'] . "</td>";
-                echo "<td>" . $row['pegawai_id_manajer'] . "</td>";
+                echo "<td>" . $row['nama_pegawai'] . "</td>";
+                echo "<td>" . $row['nama_manajer'] . "</td>";
                 echo "<td>" . $row['tanggal'] . "</td>";
                 echo "<td>";
                 echo "<a href=\"update_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\">Edit</a>";
@@ -101,10 +57,12 @@ $result = $conn->query($sql);
                 echo "</td>";
                 echo "</tr>";
             }
-
             ?>
         </tbody>
     </table>
+
+    <!-- ... -->
+
 </body>
 </html>
 
