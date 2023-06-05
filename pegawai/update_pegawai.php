@@ -42,28 +42,70 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Edit Pegawai</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Edit Pegawai</h2>
-    <form action="update_pegawai.php" method="post">
-        <input type="hidden" name="id_pegawai" value="<?php echo $row['id_pegawai']; ?>">
-        <label for="nama">Nama:</label>
-        <input type="text" name="nama" value="<?php echo $row['nama']; ?>"><br><br>
-        <label for="no_hp">No. HP:</label>
-        <input type="text" name="no_hp" value="<?php echo $row['no_hp']; ?>"><br><br>
-        <label for="alamat">Alamat:</label>
-        <input type="text" name="alamat" value="<?php echo $row['alamat']; ?>"><br><br>
-        <label for="username">Username:</label>
-        <input type="text" name="username" value="<?php echo $row['username']; ?>"><br><br>
-        <label for="password">Password:</label>
-        <input type="text" name="password" value="<?php echo $row['password']; ?>"><br><br>
-        <label for="jabatan">Jabatan:</label>
-        <select name="jabatan">
-            <option value="manajer" <?php echo ($row['jabatan'] == 'manajer') ? 'selected' : ''; ?>>Manajer</option>
-            <option value="pegawai" <?php echo ($row['jabatan'] == 'pegawai') ? 'selected' : ''; ?>>Pegawai</option>
-        </select><br><br>
-        <input type="submit" value="Update">
-    </form>
+    <div class="container">
+        <h2 class="text-center">Edit Pegawai</h2>
+        <form action="update_pegawai.php" method="post">
+            <input type="hidden" name="id_pegawai" value="<?php echo $row['id_pegawai']; ?>">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="no_hp">No. HP:</label>
+                <input type="text" name="no_hp" class="form-control" value="<?php echo $row['no_hp']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat:</label>
+                <input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" class="form-control" value="<?php echo $row['username']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" name="password" class="form-control" value="<?php echo $row['password']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="jabatan">Jabatan:</label>
+                <select name="jabatan" class="form-control">
+                    <option value="manajer" <?php echo ($row['jabatan'] == 'manajer') ? 'selected' : ''; ?>>Manajer</option>
+                    <option value="pegawai" <?php echo ($row['jabatan'] == 'pegawai') ? 'selected' : ''; ?>>Pegawai</option>
+                </select>
+            </div>
+            <input type="submit" value="Update" class="btn btn-primary">
+        </form>
+    </div>
 </body>
 </html>
 
