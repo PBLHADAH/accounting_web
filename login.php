@@ -41,7 +41,7 @@ body{
   transform-style: preserve-3d;
 }
 .container #flip:checked ~ .cover{
-  transform: rotateY(-180deg);
+  transform: none;
 }
  .container .cover .front,
  .container .cover .back{
