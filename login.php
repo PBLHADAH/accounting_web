@@ -1,3 +1,40 @@
+<?php
+// Establish a connection to the database
+require 'koneksi.php';
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Retrieve the entered username and password
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Prepare and execute the SQL query
+    $sql = "SELECT * FROM pegawai WHERE username = '$username'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // The user exists, compare the hashed passwords
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['password'])) {
+            // Passwords match, redirect to a welcome page
+            session_start();
+            $_SESSION['userdata'] = $row;
+            header('Location: index.php');
+            exit();
+        } else {
+            // Invalid password, show an error message
+            echo 'Invalid password.';
+        }
+    } else {
+        // Invalid username, show an error message
+        echo 'Invalid username.';
+    }
+}
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -245,19 +282,20 @@ body{
         </div>
       </div>
     </div>
+
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login to enter the dashboard</div>
-          <form action="#">
+          <form action="" method="post">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your Username" required>
+                <input type="text" name="username" placeholder="Enter your Username" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" name="password" placeholder="Enter your password" required>
               </div>
               <div class="text"><a href="#"></a></div>
               <div class="button input-box">
@@ -308,40 +346,4 @@ body{
 </body>
 </html>
 
-<?php
-// Establish a connection to the database
-require 'koneksi.php';
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the entered username and password
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $konfirmasi = $_POST['konfirmasi'];
-    $nama_lengkap = $_POST['nama_lengkap'];
-    $no_hp = $_POST['no_hp'];
-    $alamat = $_POST['alamat'];
-
-    $cekUser = "SELECT * FROM pegawai WHERE username = '$username'";
-    $cekUserResult = $conn->query($cekUser);
-
-    if($cekUserResult->num_rows == 0){
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-        if ($password == $konfirmasi){
-            $sql = "INSERT INTO pegawai (username, password, nama, alamat, no_hp) VALUES ('$username', 
-            '$hashedPassword', '$nama_lengkap', '$alamat', $no_hp)";
-            $conn->query($sql);
-            header("Location: login.php");
-            exit();
-        } else{
-            echo "<h2>Password tidak sesuai!</h2>";
-            exit();
-        }
-    }
-    else{
-        echo "<h2>User sudah ada!</h2>";
-    }
-}
-
-$conn->close();
-?>
+<
