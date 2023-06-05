@@ -259,14 +259,16 @@ body{
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Enter your password" required>
               </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="text"><a href="#"></a></div>
               <div class="button input-box">
                 <input type="submit" value="Submit">
               </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+              <div class="text sign-up-text"> <label for="flip"></label></div>
             </div>
         </form>
       </div>
+
+      <!-- kodingan halaman register -->
         <div class="signup-form">
           <div class="title">Signup</div>
         <form action="#">
@@ -298,6 +300,8 @@ body{
             </div>
       </form>
     </div>
+
+
     </div>
     </div>
   </div>
