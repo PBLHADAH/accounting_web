@@ -10,7 +10,6 @@
                 <th>ID</th>
                 <th>Nama Produk</th>
                 <th>Harga</th>
-                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -31,10 +30,6 @@
             echo "<td>" . $row['id_produk'] . "</td>";
             echo "<td>" . $row['nama_produk'] . "</td>";
             echo "<td> Rp." . number_format($row['harga_produk'], 0, ',', '.') . "</td>";
-            echo "<td><a href='produk/update_produk.php?id_produk=" . $row['id_produk'] . "'>Edit</a> | ";
-            echo "<form method='POST' action='produk/delete_produk.php'>";
-            echo "<input type='hidden' name='id_produk' value='" . $row['id_produk'] . "'>";
-            echo "<input type='submit' name='delete' value='Hapus'></form></td>";
             echo "</tr>";
           }
 
