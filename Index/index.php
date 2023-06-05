@@ -16,6 +16,7 @@ $result = $conn->query($sql);
 
 <table>
     <!-- Table headers -->
+    <h1>Transaksi Harian</h1>
     <thead>
         <tr>
             <th>Date</th>

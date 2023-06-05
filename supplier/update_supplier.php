@@ -36,17 +36,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Edit Supplier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Edit Supplier</h2>
-    <form action="update_supplier.php" method="post">
-        <input type="hidden" name="id_supplier" value="<?php echo $row['id_supplier']; ?>">
-        <label for="nama_supplier">Nama Supplier:</label>
-        <input type="text" name="nama_supplier" value="<?php echo $row['nama_supplier']; ?>"><br><br>
-        <label for="alamat">Alamat:</label>
-        <input type="text" name="alamat" value="<?php echo $row['alamat_supplier']; ?>"><br><br>
-        <label for="no_telepon">No. Telepon:</label>
-        <input type="text" name="no_telepon" value="<?php echo $row['no_telepon']; ?>"><br><br>
-        <input type="submit" value="Update">
-    </form>
-</body
+    <div class="container">
+        <h2>Edit Supplier</h2>
+        <form action="update_supplier.php" method="post">
+            <input type="hidden" name="id_supplier" value="<?php echo $row['id_supplier']; ?>">
+            <div class="form-group">
+                <label for="nama_supplier">Nama Supplier:</label>
+                <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" value="<?php echo $row['nama_supplier']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat:</label>
+                <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $row['alamat_supplier']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="no_telepon">No. Telepon:</label>
+                <input type="text" class="form-control" id="no_telepon" name="no_telepon" value="<?php echo $row['no_telepon']; ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -35,18 +35,40 @@ if (mysqli_num_rows($result) == 1) {
 <html>
 <head>
   <title>Edit Produk</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-  <h1>Edit Produk</h1>
+<div class="container">
+    <h1>Edit Produk</h1>
 
-  <form method="POST" action="">
-    <input type="hidden" name="id_produk" value="<?php echo $row['id_produk']; ?>">
-    <label for="nama_produk">Nama Produk:</label>
-    <input type="text" name="nama_produk" value="<?php echo $row['nama_produk']; ?>"><br>
-    <label for="harga_produk">Harga Produk:</label>
-    <input type="text" name="harga_produk" value="<?php echo $row['harga_produk']; ?>"><br>
-    <input type="submit" name="update" value="Update">
-  </form>
+    <form method="POST" action="">
+      <input type="hidden" name="id_produk" value="<?php echo $row['id_produk']; ?>">
+      
+      <div class="form-group">
+        <label for="nama_produk">Nama Produk:</label>
+        <input type="text" class="form-control" id="nama_produk" name="nama_produk" value="<?php echo $row['nama_produk']; ?>">
+      </div>
+      
+      <div class="form-group">
+        <label for="harga_produk">Harga Produk:</label>
+        <input type="text" class="form-control" id="harga_produk" name="harga_produk" value="<?php echo $row['harga_produk']; ?>">
+      </div>
+      
+      <button type="submit" name="update" class="btn btn-primary">Update</button>
+      <a href="../produk.php" class="btn btn-secondary">Kembali</a>
+
+    </form>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
 
 </body>
 </html>

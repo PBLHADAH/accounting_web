@@ -24,7 +24,6 @@ $result = $conn->query($query);
             <th>Nama Produk</th>
             <th>Nama Supplier</th>
             <th>Subtotal</th>
-            <th>Action</th>
         </tr>
         <?php
         while ($row  = $result->fetch_assoc()) {
@@ -36,7 +35,6 @@ $result = $conn->query($query);
             echo "<td>" . $row['nama_produk'] . "</td>";
             echo "<td>" . $row['nama_supplier'] . "</td>";
             echo "<td> Rp." . number_format(-$row['subtotal'], 0, ',', '.') . "</td>";
-            echo "<td><a href='transaksi_perkulakan/edit_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Edit</a> | <a href='transaksi_perkulakan/delete_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Delete</a></td>";
             echo "</tr>";
         }
         ?>

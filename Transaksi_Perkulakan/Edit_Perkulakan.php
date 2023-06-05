@@ -55,57 +55,73 @@ if (isset($_GET['id_perkulakan'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Edit Perkulakan</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Edit Perkulakan</h2>
-    <form method="post">
-        <input type="hidden" name="id_perkulakan" value="<?php echo $row_perkulakan['id_transaksi_perkulakan']; ?>">
-        <label>Tanggal:</label>
-        <input type="date" name="tanggal" value="<?php echo $row_perkulakan['tanggal']; ?>"><br>
-        <label>Kuantitas:</label>
-        <input type="number" name="kuantitas" value="<?php echo $row_perkulakan['kuantitas']; ?>"><br>
-        <label>Nama Produk:</label>
-        <select name="produk_id_produk">
-            <?php
-            // Retrieve the list of products
-            $query_produk = "SELECT * FROM produk";
-            $result_produk = $conn->query($query_produk);
+    <div class="container">
+        <h2>Edit Perkulakan</h2>
+        <form method="post">
+            <input type="hidden" name="id_perkulakan" value="<?php echo $row_perkulakan['id_transaksi_perkulakan']; ?>">
+            <div class="form-group">
+                <label for="tanggal">Tanggal:</label>
+                <input class="form-control" type="date" name="tanggal" value="<?php echo $row_perkulakan['tanggal']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="kuantitas">Kuantitas:</label>
+                <input class="form-control" type="number" name="kuantitas" value="<?php echo $row_perkulakan['kuantitas']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="produk_id_produk">Nama Produk:</label>
+                <select class="form-control" name="produk_id_produk">
+                    <?php
+                    // Retrieve the list of products
+                    $query_produk = "SELECT * FROM produk";
+                    $result_produk = $conn->query($query_produk);
 
-            if ($result_produk === false) {
-                echo "Error retrieving produk data: " . $conn->error;
-                exit();
-            }
+                    if ($result_produk === false) {
+                        echo "Error retrieving produk data: " . $conn->error;
+                        exit();
+                    }
 
-            while ($row_produk = $result_produk->fetch_assoc()) {
-                $selected = ($row_produk['id_produk'] == $row_perkulakan['produk_id_produk']) ? 'selected' : '';
-                echo "<option value='" . $row_produk['id_produk'] . "' $selected>" . $row_produk['nama_produk'] . "</option>";
-            }
-            ?>
-        </select><br>
-        <label>Nama Supplier:</label>
-        <select name="supplier_id_supplier">
-            <?php
-            // Retrieve the list of suppliers
-            $query_supplier = "SELECT * FROM supplier";
-            $result_supplier = $conn->query($query_supplier);
+                    while ($row_produk = $result_produk->fetch_assoc()) {
+                        $selected = ($row_produk['id_produk'] == $row_perkulakan['produk_id_produk']) ? 'selected' : '';
+                        echo "<option value='" . $row_produk['id_produk'] . "' $selected>" . $row_produk['nama_produk'] . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="supplier_id_supplier">Nama Supplier:</label>
+                <select class="form-control" name="supplier_id_supplier">
+                    <?php
+                    // Retrieve the list of suppliers
+                    $query_supplier = "SELECT * FROM supplier";
+                    $result_supplier = $conn->query($query_supplier);
 
-            if ($result_supplier === false) {
-                echo "Error retrieving supplier data: " . $conn->error;
-                exit();
-            }
+                    if ($result_supplier === false) {
+                        echo "Error retrieving supplier data: " . $conn->error;
+                        exit();
+                    }
 
-            while ($row_supplier = $result_supplier->fetch_assoc()) {
-                $selected = ($row_supplier['id_supplier'] == $row_perkulakan['supplier_id_supplier']) ? 'selected' : '';
-                echo "<option value='" . $row_supplier['id_supplier'] . "' $selected>" . $row_supplier['nama_supplier'] . "</option>";
-            }
-            ?>
-        </select><br>
-        <input type="submit" value="Update">
-    </form>
+                    while ($row_supplier = $result_supplier->fetch_assoc()) {
+                        $selected = ($row_supplier['id_supplier'] == $row_perkulakan['supplier_id_supplier']) ? 'selected' : '';
+                        echo "<option value='" . $row_supplier['id_supplier'] . "' $selected>" . $row_supplier['nama_supplier'] . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Update</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
 

@@ -2,18 +2,27 @@
 <html>
 <head>
     <title>Add Supplier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Add Supplier</h2>
-    <form method="POST" action="create_supplier.php">
-        <label>Nama Supplier:</label>
-        <input type="text" name="nama_supplier" required><br><br>
-        <label>Alamat:</label>
-        <input type="text" name="alamat" required><br><br>
-        <label>No. Telepon:</label>
-        <input type="text" name="no_telepon" required><br><br>
-        <input type="submit" value="Add Supplier">
-    </form>
+    <div class="container">
+        <h2>Add Supplier</h2>
+        <form method="POST" action="create_supplier.php">
+            <div class="form-group">
+                <label for="nama_supplier">Nama Supplier:</label>
+                <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" required>
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat:</label>
+                <input type="text" class="form-control" id="alamat" name="alamat" required>
+            </div>
+            <div class="form-group">
+                <label for="no_telepon">No. Telepon:</label>
+                <input type="text" class="form-control" id="no_telepon" name="no_telepon" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Supplier</button>
+        </form>
+    </div>
 </body>
 </html>
 

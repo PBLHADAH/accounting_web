@@ -39,32 +39,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Add Transaksi</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Add Transaksi</h2>
-    <form action="" method="post">
-        <label for="id_produk">Produk:</label>
-        <select name="id_produk">
-            <?php
-            while ($row_produk = $result_produk->fetch_assoc()) {
-                echo "<option value='" . $row_produk['id_produk'] . "'>" . $row_produk['nama_produk'] . "</option>";
-            }
-            ?>
-        </select><br><br>
-        <label for="id_supplier">Supplier:</label>
-        <select name="id_supplier">
-            <?php
-            while ($row_supplier = $result_supplier->fetch_assoc()) {
-                echo "<option value='" . $row_supplier['id_supplier'] . "'>" . $row_supplier['nama_supplier'] . "</option>";
-            }
-            ?>
-        </select><br><br>
-        <label for="tanggal">Tanggal:</label>
-        <input type="date" name="tanggal"><br><br>
-        <label for="jumlah">Jumlah:</label>
-        <input type="number" name="jumlah"><br><br>
-        <input type="submit" value="Add">
-    </form>
+    <div class="container">
+        <h2>Add Transaksi</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="id_produk">Produk:</label>
+                <select class="form-control" name="id_produk">
+                    <?php
+                    while ($row_produk = $result_produk->fetch_assoc()) {
+                        echo "<option value='" . $row_produk['id_produk'] . "'>" . $row_produk['nama_produk'] . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_supplier">Supplier:</label>
+                <select class="form-control" name="id_supplier">
+                    <?php
+                    while ($row_supplier = $result_supplier->fetch_assoc()) {
+                        echo "<option value='" . $row_supplier['id_supplier'] . "'>" . $row_supplier['nama_supplier'] . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tanggal">Tanggal:</label>
+                <input class="form-control" type="date" name="tanggal">
+            </div>
+            <div class="form-group">
+                <label for="jumlah">Jumlah:</label>
+                <input class="form-control" type="number" name="jumlah">
+            </div>
+            <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
 
