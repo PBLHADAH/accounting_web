@@ -11,17 +11,17 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
 6. Figma ✅ 
 https://www.figma.com/file/MQefGWNwbWz5J8oazmlz8O/Horizon-UI---Trendiest-Open-Source-Admin-Template-Dashboard-(Community)-(Community)-(Copy)-(Copy)?type=design&node-id=0-1&t=7txbNuL5S51I1yyc-0
 7. Front end ❌
-8. Back end ❌
+8. Back end ✅
 9. Rpp ✅
 10. Laporan Akhir ❌
 https://docs.google.com/document/d/1CRcbeVe_Eh2O4blYHSAvgczBXrFk3-mIxtlp7_PC1Qg/edit
 
 
 ## TO DO LIST CODINGAN:
-1. Login ❌
+1. Login ✅
    1. Login ke database ✅
-   2. Session ❌
-   3. Logout ❌
+   2. Session ✅
+   3. Logout ✅
 2. Index [Hanif] ✅
    1. Navigasi ✅
    2. Tabel Penjualan ✅
