@@ -22,8 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $deskripsi = $_POST['deskripsi'];
     $nominal = $_POST['nominal'];
     $pencatat_id = $_SESSION["userdata"]["id_pegawai"];
+    $tanggal = date('Y-m-d');
 
-    $sql = "INSERT INTO transaksi_lainnya (deskripsi, nominal, pegawai_id_pencatat) VALUES ('$deskripsi', '$nominal', '$pencatat_id')";
+    $sql = "INSERT INTO transaksi_lainnya (deskripsi, nominal, pegawai_id_pencatat, tanggal) VALUES ('$deskripsi', '$nominal', '$pencatat_id', '$tanggal')";
 
     if ($conn->query($sql) === TRUE) {
         header('Location: ../lainnya.php');// ganti

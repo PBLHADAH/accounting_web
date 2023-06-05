@@ -36,6 +36,7 @@ $result = $conn->query($sql);
                 <th>Deskripsi</th>
                 <th>Nominal</th>
                 <th>Pencatat</th>
+                <th>Tanggal</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -47,8 +48,9 @@ $result = $conn->query($sql);
                 echo "<tr>";
                 echo "<td>" . $row['id_transaksi_lainnya'] . "</td>";
                 echo "<td>" . $row['deskripsi'] . "</td>";
-                echo "<td>" . $row['nominal'] . "</td>";
+                echo "<td> Rp." . number_format($row['nominal'], 0, ',', '.') . "</td>";
                 echo "<td>" . $pencatat_hasil['nama'] . "</td>";
+                echo "<td>" . $row['tanggal'] . "</td>";
                 echo "<td>";
                 echo "<a href=\"transaksi_lainnya/edit_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\">Edit</a>";
                 echo "<a href=\"transaksi_lainnya/delete_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";

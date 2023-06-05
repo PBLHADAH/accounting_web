@@ -30,7 +30,7 @@
       echo "<tr>";
       echo "<td>" . $row['id_produk'] . "</td>";
       echo "<td>" . $row['nama_produk'] . "</td>";
-      echo "<td>" . $row['harga_produk'] . "</td>";
+      echo "<td> Rp." . number_format($row['harga_produk'], 0, ',', '.') . "</td>";
       echo "</tr>";
     }
     echo "</table>";

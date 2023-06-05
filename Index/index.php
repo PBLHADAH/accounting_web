@@ -1,3 +1,43 @@
+<?php
+require_once "koneksi.php";
+
+$sql = "SELECT DATE(tp.tanggal) AS tanggal, 
+        SUM(tp.penjualan_retail + tp.penjualan_grosir + tp.penjualan_aksesoris + tl.nominal) AS pemasukan,
+        SUM(tpk.kuantitas * pr.harga_produk * -1) AS pengeluaran,
+        SUM(tp.penjualan_retail + tp.penjualan_grosir + tp.penjualan_aksesoris + tl.nominal) 
+        + SUM(tpk.kuantitas * pr.harga_produk * -1) AS subtotal
+        FROM transaksi_penjualan tp
+        LEFT JOIN transaksi_lainnya tl ON DATE(tp.tanggal) = DATE(tl.tanggal)
+        INNER JOIN transaksi_perkulakan tpk ON DATE(tp.tanggal) = DATE(tpk.tanggal)
+        INNER JOIN produk pr ON tpk.produk_id_produk = pr.id_produk
+        GROUP BY DATE(tp.tanggal)";
+$result = $conn->query($sql);
+?>
+
+<table>
+    <!-- Table headers -->
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Pemasukan</th>
+            <th>Pengeluaran</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['tanggal'] . "</td>";
+            echo "<td> Rp." . number_format($row['pemasukan'], 0, ',', '.') . "</td>";
+            echo "<td> Rp." . number_format($row['pengeluaran'], 0, ',', '.') . "</td>";
+            echo "<td> Rp." . number_format($row['subtotal'], 0, ',', '.') . "</td>";
+            echo "</tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
 <!-- Landing page  dan tabel -->
 <div class="container">
   

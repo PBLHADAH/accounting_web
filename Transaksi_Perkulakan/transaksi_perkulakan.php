@@ -34,16 +34,16 @@ if ($result_perkulakan === false) {
             <th>Action</th>
         </tr>
         <?php
-        while ($row_perkulakan = $result_perkulakan->fetch_assoc()) {
+        while ($row = $result_perkulakan->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row_perkulakan['id_transaksi_perkulakan'] . "</td>";
-            echo "<td>" . $row_perkulakan['tanggal'] . "</td>";
-            echo "<td>" . $row_perkulakan['kuantitas'] . "</td>";
-            echo "<td>" . $row_perkulakan['nama_pegawai'] . "</td>";
-            echo "<td>" . $row_perkulakan['nama_produk'] . "</td>";
-            echo "<td>" . $row_perkulakan['nama_supplier'] . "</td>";
-            echo "<td>" . $row_perkulakan['subtotal'] . "</td>";
-            echo "<td><a href='transaksi_perkulakan/edit_perkulakan.php?id_perkulakan=" . $row_perkulakan['id_transaksi_perkulakan'] . "'>Edit</a> | <a href='transaksi_perkulakan/delete_perkulakan.php?id_perkulakan=" . $row_perkulakan['id_transaksi_perkulakan'] . "'>Delete</a></td>";
+            echo "<td>" . $row['id_transaksi_perkulakan'] . "</td>";
+            echo "<td>" . $row['tanggal'] . "</td>";
+            echo "<td>" . $row['kuantitas'] . "</td>";
+            echo "<td>" . $row['nama_pegawai'] . "</td>";
+            echo "<td>" . $row['nama_produk'] . "</td>";
+            echo "<td>" . $row['nama_supplier'] . "</td>";
+            echo "<td> Rp." . number_format(-$row['subtotal'], 0, ',', '.') . "</td>";
+            echo "<td><a href='transaksi_perkulakan/edit_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Edit</a> | <a href='transaksi_perkulakan/delete_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Delete</a></td>";
             echo "</tr>";
         }
         ?>

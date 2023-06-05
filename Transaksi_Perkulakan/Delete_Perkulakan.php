@@ -1,13 +1,13 @@
 <?php
 include '../koneksi.php';
 
-$id_transaksi = $_GET['id_transaksi'];
+$id_perkulakan = $_GET['id_perkulakan'];
 
-$sql = "DELETE FROM transaksi_perkulakan WHERE id_transaksi='$id_transaksi'";
+$sql = "DELETE FROM transaksi_perkulakan WHERE id_transaksi_perkulakan='$id_perkulakan'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Transaksi deleted successfully.";
-    header("Location: ../transaksi_perkulakan.php");
+    header("Location: ../perkulakan.php");
 } else {
     echo "Error deleting transaksi: " . $conn->error;
 }
