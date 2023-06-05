@@ -1,111 +1,114 @@
+<?php
+include '../koneksi.php';
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the form data
+    $id_perkulakan = $_POST['id_perkulakan'];
+    $tanggal = $_POST['tanggal'];
+    $kuantitas = $_POST['kuantitas'];
+    $produk_id_produk = $_POST['produk_id_produk'];
+    $supplier_id_supplier = $_POST['supplier_id_supplier'];
+
+    // Update the perkulakan transaction
+    $update_query = "UPDATE transaksi_perkulakan
+                    SET tanggal = '$tanggal', kuantitas = '$kuantitas', produk_id_produk = '$produk_id_produk', supplier_id_supplier = '$supplier_id_supplier'
+                    WHERE id_transaksi_perkulakan = '$id_perkulakan'";
+
+    if ($conn->query($update_query) === true) {
+        echo "Perkulakan transaction updated successfully.";
+        header("location: ../perkulakan.php");
+    } else {
+        echo "Error updating perkulakan transaction: " . $conn->error;
+    }
+}
+
+// Check if the id_perkulakan parameter is provided
+if (isset($_GET['id_perkulakan'])) {
+    $id_perkulakan = $_GET['id_perkulakan'];
+
+    // Retrieve the perkulakan transaction details
+    $query_perkulakan = "SELECT tp.id_transaksi_perkulakan, tp.tanggal, tp.kuantitas, tp.pegawai_id_pencatat, tp.produk_id_produk, tp.supplier_id_supplier, pg.nama AS nama_pegawai, pr.nama_produk, s.nama_supplier
+                        FROM transaksi_perkulakan tp
+                        JOIN pegawai pg ON tp.pegawai_id_pencatat = pg.id_pegawai
+                        JOIN produk pr ON tp.produk_id_produk = pr.id_produk
+                        JOIN supplier s ON tp.supplier_id_supplier = s.id_supplier
+                        WHERE tp.id_transaksi_perkulakan = '$id_perkulakan'";
+
+    $result_perkulakan = $conn->query($query_perkulakan);
+
+    if ($result_perkulakan === false) {
+        echo "Error retrieving perkulakan transaction details: " . $conn->error;
+        exit();
+    }
+
+    // Check if the perkulakan transaction exists
+    if ($result_perkulakan->num_rows === 0) {
+        echo "Perkulakan transaction not found.";
+        exit();
+    }
+
+    $row_perkulakan = $result_perkulakan->fetch_assoc();
+} else {
+    echo "Missing id_perkulakan parameter.";
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Produk</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        .container h2 {
-            margin-top: 0;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        .form-group input[type="text"],
-        .form-group input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-        
-        .form-group input[type="submit"] {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        
-        .form-group input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Edit Perkulakan</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Edit Produk</h2>
-        <?php
-        require_once "../koneksi.php";
+    <h2>Edit Perkulakan</h2>
+    <form method="post">
+        <input type="hidden" name="id_perkulakan" value="<?php echo $row_perkulakan['id_transaksi_perkulakan']; ?>">
+        <label>Tanggal:</label>
+        <input type="date" name="tanggal" value="<?php echo $row_perkulakan['tanggal']; ?>"><br>
+        <label>Kuantitas:</label>
+        <input type="number" name="kuantitas" value="<?php echo $row_perkulakan['kuantitas']; ?>"><br>
+        <label>Nama Produk:</label>
+        <select name="produk_id_produk">
+            <?php
+            // Retrieve the list of products
+            $query_produk = "SELECT * FROM produk";
+            $result_produk = $conn->query($query_produk);
 
-        function sanitize($input)
-        {
-            global $conn;
-            $output = mysqli_real_escape_string($conn, $input);
-            $output = htmlspecialchars($output);
-            return $output;
-        }
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $id_produk = sanitize($_POST["id_produk"]);
-            $nama_produk = sanitize($_POST["nama_produk"]);
-            $kuantitas = sanitize($_POST["kuantitas"]);
-            $sql = "UPDATE produk SET nama_produk='$nama_produk', kuantitas='$kuantitas' WHERE id_produk='$id_produk'";
-
-            if ($conn->query($sql) === TRUE) {
-                header('Location: transaksi_perkulakan.php');
-                exit;
-            } else {
-                echo "Error updating product: " . $conn->error;
+            if ($result_produk === false) {
+                echo "Error retrieving produk data: " . $conn->error;
+                exit();
             }
-        } else {
-            $id_produk = $_GET['id'];
 
-            $sql = "SELECT * FROM produk WHERE id_produk='$id_produk'";
-            $result = $conn->query($sql);
-            $row = $result->fetch_assoc();
-        ?>
+            while ($row_produk = $result_produk->fetch_assoc()) {
+                $selected = ($row_produk['id_produk'] == $row_perkulakan['produk_id_produk']) ? 'selected' : '';
+                echo "<option value='" . $row_produk['id_produk'] . "' $selected>" . $row_produk['nama_produk'] . "</option>";
+            }
+            ?>
+        </select><br>
+        <label>Nama Supplier:</label>
+        <select name="supplier_id_supplier">
+            <?php
+            // Retrieve the list of suppliers
+            $query_supplier = "SELECT * FROM supplier";
+            $result_supplier = $conn->query($query_supplier);
 
-        <form action="edit_produk.php" method="post">
-            <div class="form-group">
-                <label for="nama_produk">Nama Produk:</label>
-                <input type="text" name="nama_produk" value="<?php echo $row['nama_produk']; ?>">
-            </div>
-            <div class="form-group">
-                <label for="kuantitas">Kuantitas:</label>
-                <input type="number" name="kuantitas" value="<?php echo $row['kuantitas']; ?>">
-            </div>
-            <div class="form-group">
-                <input type="hidden" name="id_produk" value="<?php echo $row['id_produk']; ?>">
-                <input type="submit" value="Update">
-            </div>
-        </form>
+            if ($result_supplier === false) {
+                echo "Error retrieving supplier data: " . $conn->error;
+                exit();
+            }
 
-        <?php
-        }
-
-        $conn->close();
-        ?>
-    </div>
+            while ($row_supplier = $result_supplier->fetch_assoc()) {
+                $selected = ($row_supplier['id_supplier'] == $row_perkulakan['supplier_id_supplier']) ? 'selected' : '';
+                echo "<option value='" . $row_supplier['id_supplier'] . "' $selected>" . $row_supplier['nama_supplier'] . "</option>";
+            }
+            ?>
+        </select><br>
+        <input type="submit" value="Update">
+    </form>
 </body>
 </html>
+
+<?php
+$conn->close();
+?>

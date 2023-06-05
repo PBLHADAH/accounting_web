@@ -1,18 +1,16 @@
 <?php
-require '../koneksi.php';
+include '../koneksi.php';
 
-if(isset($_GET['id'])) {
-    header('Location: transaksi_perkulakan.php');
-    $id_produk = $_GET['id'];
-    
-    // Menghapus data produk dari database
-    $sql = "DELETE FROM produk WHERE id_produk = '$id_produk'";
-    if ($conn->query($sql) === TRUE) {
-        echo "Data produk berhasil dihapus.";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+$id_transaksi = $_GET['id_transaksi'];
+
+$sql = "DELETE FROM transaksi_perkulakan WHERE id_transaksi='$id_transaksi'";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Transaksi deleted successfully.";
+    header("Location: ../transaksi_perkulakan.php");
+} else {
+    echo "Error deleting transaksi: " . $conn->error;
 }
 
-// Menutup koneksi database
 $conn->close();
+?>

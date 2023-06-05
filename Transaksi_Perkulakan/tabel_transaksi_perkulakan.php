@@ -1,28 +1,21 @@
 <?php
-include 'koneksi.php';
+require 'koneksi.php';
 
-$query_perkulakan = "SELECT tp.id_transaksi_perkulakan, tp.tanggal, tp.kuantitas, pg.nama AS nama_pegawai, pr.nama_produk, s.nama_supplier, (tp.kuantitas * pr.harga_produk) AS subtotal
-                    FROM transaksi_perkulakan tp
-                    JOIN produk pr ON tp.produk_id_produk = pr.id_produk
-                    JOIN supplier s ON tp.supplier_id_supplier = s.id_supplier
-                    JOIN pegawai pg ON tp.pegawai_id_pencatat = pg.id_pegawai";
-$result_perkulakan = $conn->query($query_perkulakan);
+$query = "SELECT tp.id_transaksi_perkulakan, tp.tanggal, tp.kuantitas, tp.pegawai_id_pencatat, pg.nama AS nama_pegawai, pr.nama_produk, s.nama_supplier, (tp.kuantitas * pr.harga_produk) AS subtotal
+            FROM transaksi_perkulakan tp
+            JOIN pegawai pg ON tp.pegawai_id_pencatat = pg.id_pegawai
+            JOIN produk pr ON tp.produk_id_produk = pr.id_produk
+            JOIN supplier s ON tp.supplier_id_supplier = s.id_supplier
+            ORDER BY tp.id_transaksi_perkulakan";
 
-if ($result_perkulakan === false) {
-    echo "Error retrieving perkulakan data: " . $conn->error;
-    exit();
-}
+$result = $conn->query($query);
+// if ($row_perkulakan === false) {
+//     echo "Error executing query: " . $conn->error;
+//     exit();
+// }
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Data Perkulakan</title>
-    </head>
-    <body>
-        <h2>Data Perkulakan</h2>
-        <a href="transaksi_perkulakan/create_perkulakan.php">Tambah Transaksi Perkulakan</a>
-    <table border="1">
+<table border="1">
         <tr>
             <th>ID</th>
             <th>Tanggal</th>
@@ -34,7 +27,7 @@ if ($result_perkulakan === false) {
             <th>Action</th>
         </tr>
         <?php
-        while ($row_perkulakan = $result_perkulakan->fetch_assoc()) {
+        while ($row_perkulakan  = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row_perkulakan['id_transaksi_perkulakan'] . "</td>";
             echo "<td>" . $row_perkulakan['tanggal'] . "</td>";
@@ -48,10 +41,6 @@ if ($result_perkulakan === false) {
         }
         ?>
     </table>
-    <br>
-</body>
-</html>
-
 <?php
 $conn->close();
 ?>

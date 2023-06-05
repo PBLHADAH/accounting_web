@@ -19,8 +19,8 @@
   <?php require 'transaksi_penjualan/table_penjualan.php'; ?>
 </div>
 <div class="container">
-  <h1>Transaksi Grosir</h1>
-  <?php require 'transaksi_lainnya/tabel_transaksi_lainnya.php'; ?>
+  <h1>Transaksi Perkulakan</h1>
+  <?php require 'transaksi_perkulakan/tabel_transaksi_perkulakan.php'; ?>
 </div>
 <div class="container">
   <h1>Transaksi Lainnya</h1>
