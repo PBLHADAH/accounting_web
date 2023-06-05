@@ -16,6 +16,8 @@ https://www.figma.com/file/MQefGWNwbWz5J8oazmlz8O/Horizon-UI---Trendiest-Open-So
 https://docs.google.com/document/d/1IkFVsmV09c9UJ20VXRo8iBKQXLgRSPKhuO2v_tlaSXk/edit#
 11. Laporan Akhir ✅
 https://docs.google.com/document/d/1CRcbeVe_Eh2O4blYHSAvgczBXrFk3-mIxtlp7_PC1Qg/edit
+12. PPT ❌
+https://www.canva.com/design/DAFk7CNzyUg/uL-SSAkILkq2Atl4SPMNXw/edit
 
 
 ## TO DO LIST CODINGAN:
