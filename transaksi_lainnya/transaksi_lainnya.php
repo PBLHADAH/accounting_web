@@ -8,7 +8,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Transactions</title>
+    <title>Transaksi Lainnya</title>
     <style>
         table {
             border-collapse: collapse;
@@ -27,8 +27,8 @@ $result = $conn->query($sql);
     </style>
 </head>
 <body>
-    <h2>Transactions</h2>
-    <a href="transaksi_lainnya/create_transaksi.php">Create Transaction</a>
+    <h2>Transaksi Lainnya</h2>
+    <a href="transaksi_lainnya/create_transaksi.php">Tambah Transaksi Lainnya</a>
     <table>
         <thead>
             <tr>

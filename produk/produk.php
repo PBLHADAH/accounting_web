@@ -5,15 +5,14 @@
 </head>
 <body>
   <h1>Kelola Produk</h1>
-  <button onclick="location.href='produk/create_produk.php'">Tambah Produk</button> <!-- Tambahkan tombol Tambah Produk -->
+  <a href='produk/create_produk.php'>Tambah Produk </a> <!-- Tambahkan tombol Tambah Produk -->
   <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nama Supplier</th>
-                <th>Alamat</th>
-                <th>No. Telepon</th>
-                <th>Action</th>
+                <th>Nama Produk</th>
+                <th>Harga</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>

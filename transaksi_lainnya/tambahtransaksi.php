@@ -9,7 +9,7 @@
 <body>
     <h1>Transaksi lainnya</h1>
 <form method="POST" action="transaksilainnya.php">
-      <label for="deskripsi">deskripsi :</label>
+      <label for="deskripsi">deskripsi   :</label>
       <input type="text" id="deskripsi" name="deskripsi" required><br><br>
       <label for="pegawai_id_pegawai">pegawai_id_pegawai :</label>
       <select id="pegawai_id_pegawai" name="pegawai_id_pegawai" required>
