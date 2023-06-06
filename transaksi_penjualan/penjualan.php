@@ -56,7 +56,7 @@ $result = $conn->query($sql);
                 echo "<td>";
                 echo "<a href=\"transaksi_penjualan/update_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\">Edit</a>";
                 echo "<span class=\"action-separator\">|</span>";
-                echo "<a href=\"transaksi_penjualan/delete_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
+                echo "<a href=\"transaksi_penjualan/delete_penjualan.php?id_transaksi=" . $row['id_transaksi_penjualan'] . "\" onclick=\"return confirm('Are you sure?');\"> Delete</a>";
                 echo "</td>";
                 echo "</tr>";
             }

@@ -40,6 +40,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['jabatan'] . "</td>";
                 echo "<td>";
                 echo "<a href=\"pegawai/update_pegawai.php?id_pegawai=" . $row['id_pegawai'] . "\">Edit</a>";
+                echo "<span class=\"action-separator\">|</span>";
                 echo "<a href=\"pegawai/delete_pegawai.php?id_pegawai=" . $row['id_pegawai'] . "\" onclick=\"return confirm('Apakah anda yakin?');\">Delete</a>";
                 echo "</td>";
                 echo "</tr>";
