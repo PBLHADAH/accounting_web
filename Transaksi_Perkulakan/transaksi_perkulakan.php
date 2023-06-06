@@ -22,7 +22,7 @@ if ($result_perkulakan === false) {
     <body>
         <h2>Data Perkulakan</h2>
         <a href="transaksi_perkulakan/create_perkulakan.php">Tambah Transaksi Perkulakan</a>
-    <table border="1">
+    <table>
         <tr>
             <th>ID</th>
             <th>Tanggal</th>

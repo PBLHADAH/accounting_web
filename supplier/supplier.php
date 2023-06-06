@@ -33,6 +33,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row['no_telepon'] . "</td>";
                 echo "<td>";
                 echo "<a href=\"supplier/update_supplier.php?id_supplier=" . $row['id_supplier'] . "\">Edit</a>";
+                echo "<span class=\"action-separator\">|</span>";
                 echo "<a href=\"supplier/delete_supplier.php?id_supplier=" . $row['id_supplier'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
                 echo "</td>";
                 echo "</tr>";
