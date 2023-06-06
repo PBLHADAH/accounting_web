@@ -69,12 +69,24 @@ if (isset($_GET['id_perkulakan'])) {
         <form method="post">
             <input type="hidden" name="id_perkulakan" value="<?php echo $row_perkulakan['id_transaksi_perkulakan']; ?>">
             <div class="form-group">
-                <label for="tanggal">Tanggal:</label>
-                <input class="form-control" type="date" name="tanggal" value="<?php echo $row_perkulakan['tanggal']; ?>">
-            </div>
-            <div class="form-group">
-                <label for="kuantitas">Kuantitas:</label>
-                <input class="form-control" type="number" name="kuantitas" value="<?php echo $row_perkulakan['kuantitas']; ?>">
+                <label for="supplier_id_supplier">Nama Supplier:</label>
+                <select class="form-control" name="supplier_id_supplier">
+                    <?php
+                    // Retrieve the list of suppliers
+                    $query_supplier = "SELECT * FROM supplier";
+                    $result_supplier = $conn->query($query_supplier);
+                    
+                    if ($result_supplier === false) {
+                        echo "Error retrieving supplier data: " . $conn->error;
+                        exit();
+                    }
+                    
+                    while ($row_supplier = $result_supplier->fetch_assoc()) {
+                        $selected = ($row_supplier['id_supplier'] == $row_perkulakan['supplier_id_supplier']) ? 'selected' : '';
+                        echo "<option value='" . $row_supplier['id_supplier'] . "' $selected>" . $row_supplier['nama_supplier'] . "</option>";
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="produk_id_produk">Nama Produk:</label>
@@ -88,7 +100,7 @@ if (isset($_GET['id_perkulakan'])) {
                         echo "Error retrieving produk data: " . $conn->error;
                         exit();
                     }
-
+                    
                     while ($row_produk = $result_produk->fetch_assoc()) {
                         $selected = ($row_produk['id_produk'] == $row_perkulakan['produk_id_produk']) ? 'selected' : '';
                         echo "<option value='" . $row_produk['id_produk'] . "' $selected>" . $row_produk['nama_produk'] . "</option>";
@@ -97,25 +109,13 @@ if (isset($_GET['id_perkulakan'])) {
                 </select>
             </div>
             <div class="form-group">
-                <label for="supplier_id_supplier">Nama Supplier:</label>
-                <select class="form-control" name="supplier_id_supplier">
-                    <?php
-                    // Retrieve the list of suppliers
-                    $query_supplier = "SELECT * FROM supplier";
-                    $result_supplier = $conn->query($query_supplier);
-
-                    if ($result_supplier === false) {
-                        echo "Error retrieving supplier data: " . $conn->error;
-                        exit();
-                    }
-
-                    while ($row_supplier = $result_supplier->fetch_assoc()) {
-                        $selected = ($row_supplier['id_supplier'] == $row_perkulakan['supplier_id_supplier']) ? 'selected' : '';
-                        echo "<option value='" . $row_supplier['id_supplier'] . "' $selected>" . $row_supplier['nama_supplier'] . "</option>";
-                    }
-                    ?>
-                </select>
+                <label for="kuantitas">Kuantitas:</label>
+                <input class="form-control" type="number" name="kuantitas" value="<?php echo $row_perkulakan['kuantitas']; ?>">
             </div>
+                <div class="form-group">
+                    <label for="tanggal">Tanggal:</label>
+                    <input class="form-control" type="date" name="tanggal" value="<?php echo $row_perkulakan['tanggal']; ?>">
+                </div>
             <button class="btn btn-primary" type="submit">Update</button>
         </form>
     </div>

@@ -9,11 +9,11 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tabel Pegawai Detail</title>
+    <title>Tabel Pegawai</title>
 
 </head>
 <body>
-    <h2>Tabel Pegawai Detail</h2>
+    <h2>Daftar Pegawai</h2>
     <a href="pegawai/create_pegawai.php">Tambah pegawai</a>
     <table>
         <thead>
@@ -24,7 +24,7 @@ $result = $conn->query($sql);
                 <th>Alamat</th>
                 <th>Username</th>
                 <th>Jabatan</th>
-                <th>Action</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>

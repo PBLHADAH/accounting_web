@@ -38,7 +38,7 @@ $result = $conn->query($sql);
                 <th>Pegawai</th>
                 <th>Manajer</th>
                 <th>Tanggal</th>
-                <th>Action</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>

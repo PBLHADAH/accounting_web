@@ -20,7 +20,7 @@ $result = $conn->query($sql);
                 <th>Nama Supplier</th>
                 <th>Alamat</th>
                 <th>No. Telepon</th>
-                <th>Action</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
