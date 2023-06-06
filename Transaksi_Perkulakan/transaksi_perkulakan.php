@@ -31,7 +31,7 @@ if ($result_perkulakan === false) {
             <th>Nama Produk</th>
             <th>Nama Supplier</th>
             <th>Subtotal</th>
-            <th>Action</th>
+            <th>Aksi</th>
         </tr>
         <?php
         while ($row = $result_perkulakan->fetch_assoc()) {
@@ -43,7 +43,9 @@ if ($result_perkulakan === false) {
             echo "<td>" . $row['nama_produk'] . "</td>";
             echo "<td>" . $row['nama_supplier'] . "</td>";
             echo "<td> Rp." . number_format(-$row['subtotal'], 0, ',', '.') . "</td>";
-            echo "<td><a href='transaksi_perkulakan/edit_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Edit</a> | <a href='transaksi_perkulakan/delete_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Delete</a></td>";
+            echo "<td><a href='transaksi_perkulakan/edit_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Edit</a>";
+            echo "<span class=\"action-separator\">|</span>";
+            echo "<a href='transaksi_perkulakan/delete_perkulakan.php?id_perkulakan=" . $row['id_transaksi_perkulakan'] . "'>Delete</a></td>";
             echo "</tr>";
         }
         ?>
