@@ -2,7 +2,7 @@
 include 'koneksi.php';
 
 // Retrieve data from the 'pegawai' table
-$sql = "SELECT * FROM pegawai";
+$sql =  "SELECT *FROM pegawai";
 $result = $conn->query($sql);
 ?>
 
