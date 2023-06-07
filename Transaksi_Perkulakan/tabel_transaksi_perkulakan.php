@@ -15,7 +15,7 @@ $result = $conn->query($query);
 // }
 ?>
 
-<table border="1">
+<table>
         <tr>
             <th>ID</th>
             <th>Tanggal</th>
