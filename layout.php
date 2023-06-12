@@ -10,7 +10,7 @@
   <!-- icon ico -->
   <?php
   require "session.php";
-  $iconPath = 'book2.ico';
+  $iconPath = './index/book2.ico';
   echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
   ?>
 

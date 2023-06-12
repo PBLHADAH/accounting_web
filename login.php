@@ -39,6 +39,12 @@ $conn->close();
 
 <html lang="en" dir="ltr">
   <head>
+    
+     <!-- icon ico -->
+  <?php
+  $iconPath = './index/book2.ico';
+  echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
+  ?>
     <style>
         /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -259,7 +265,7 @@ body{
 }
     </style>
     <meta charset="UTF-8">
-    <title> Login and Registration | Aldyz Cell</title>
+    <title> Login | Aldyz Cell</title>
     <link rel="stylesheet" href="style.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -273,12 +279,6 @@ body{
         <img src="foto pencatatan.jpg">
         <div class="text">
           <span class="text-1">Web-Based Aldyz Cell Counter Transaction Recording System</span>
-        </div>
-      </div>
-      <div class="back">
-        <div class="text">
-          <span class="text-1">Complete miles of journey <br> with one step</span>
-          <span class="text-2">Let's get started</span>
         </div>
       </div>
     </div>

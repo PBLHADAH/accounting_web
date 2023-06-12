@@ -41,6 +41,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Add Transaksi</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+     
+    <!-- icon ico -->
+   <?php
+  $iconPath = '../index/book2.ico';
+  echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
+  ?>
+
+  <style>
+       /* CSS code here */
+       body {
+            background-color: #f2f2f2;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+  </style>
+
 </head>
 <body>
     <div class="container">

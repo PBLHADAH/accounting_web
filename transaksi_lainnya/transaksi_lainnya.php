@@ -10,25 +10,69 @@ $result = $conn->query($sql);
 <head>
     <title>Transaksi Lainnya</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+ .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+    h2 {
+        margin: 0;
+    }
 
-        form {
-            display: inline-block;
-        }
+    .add-link {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 14px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .add-link:hover {
+        background-color: #0069d9;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #f8f8f8;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .action-separator {
+        margin: 0 5px;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body>
-    <h2>Transaksi Lainnya</h2>
-    <a href="transaksi_lainnya/create_transaksi.php">Tambah Transaksi Lainnya</a>
+    
+    <div class="header-container">
+        <h2>Transaksi Lainnya</h2>
+        <a href="transaksi_lainnya/create_transaksi.php" class="add-link">Tambah Transaksi Lainnya</a>
+    </div>
+
     <table>
         <thead>
             <tr>
