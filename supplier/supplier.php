@@ -9,10 +9,69 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Supplier Details</title>
+    <style>
+ .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .add-link {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 14px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .add-link:hover {
+        background-color: #0069d9;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #f8f8f8;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .action-separator {
+        margin: 0 5px;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
 </head>
 <body>
-    <h2>Supplier Details</h2>
-    <a href="supplier/create_supplier.php">Add Supplier</a>
+    <div class="header-container">
+        <h2>Supplier Details</h2>
+        <a href="supplier/create_supplier.php"class="add-link">Add Supplier</a>
+    </div>
+   
     <table>
         <thead>
             <tr>

@@ -33,7 +33,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-    <title>Edit Transaction</title>
+    <title>Edit Transaction | Aldyz Cell</title>
+    
+    <?php
+  $iconPath = '../index/book2.ico';
+  echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
+  ?>
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 40px;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 0 auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+    </style>
+
+
 </head>
 <body>
 <div class="container">

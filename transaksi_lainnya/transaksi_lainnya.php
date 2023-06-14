@@ -98,7 +98,7 @@ $result = $conn->query($sql);
                 echo "<td>";
                 echo "<a href=\"transaksi_lainnya/edit_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\">Edit</a>";
                 echo "<span class=\"action-separator\">|</span>";
-                echo "<a href=\"transaksi_lainnya/delete_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\" onclick=\"return confirm('Are you sure?');\">Delete</a>";
+                echo "<a href=\"transaksi_lainnya/delete_transaksi.php?id_transaksi=" . $row['id_transaksi_lainnya'] . "\" onclick=\"return confirm('Apakah Anda Yakin?');\">Delete</a>";
                 echo "</td>";
                 echo "</tr>";
             }
