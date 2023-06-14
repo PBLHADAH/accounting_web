@@ -41,8 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Pegawai</title>
+    <title>Edit Pegawai | Aldyz Cell</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <?php
+  $iconPath = '../index/book2.ico';
+  echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
+  ?>
+    
     <style>
         body {
             padding: 20px;

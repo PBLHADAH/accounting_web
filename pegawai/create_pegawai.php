@@ -3,6 +3,12 @@
 <head>
     <title>Registration Pegawai | Aldyz Cell </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6bY/iJTQUOhwMh4nFfdYL6s1uxH+q" crossorigin="anonymous">
+   
+   <?php
+  $iconPath = '../index/book2.ico';
+  echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
+  ?>
+  
     <style>
         body {
             font-family: Arial, sans-serif;
