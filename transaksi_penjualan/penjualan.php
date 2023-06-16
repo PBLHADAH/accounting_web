@@ -115,9 +115,6 @@ $result = $conn->query($sql);
             ?>
         </tbody>
     </table>
-
-    <!-- ... -->
-
 </body>
 </html>
 

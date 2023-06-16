@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Ubah Penjualan | Aldyz Cell</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <?php
+    $iconPath = '../index/book2.ico';
+    echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
+    ?>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        css Copy code .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .btn-success {
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+    </style>
+
 </head>
+
 <body>
     <div class="container">
-        <h1>Ubah Transaksi Penjualan</h1>
+     <br><h1>Ubah Transaksi Penjualan</h1>
         <?php
         require_once "../koneksi.php";
 
@@ -31,7 +78,7 @@
                 $row = mysqli_fetch_assoc($result);
 
                 // Menampilkan form untuk mengubah data transaksi
-                ?>
+        ?>
                 <form action="" method="POST">
                     <input type="hidden" name="id_transaksi" value="<?php echo $row['id_transaksi_penjualan']; ?>">
                     <div class="form-group">
@@ -63,10 +110,11 @@
                         </select>
                     </div>
                     <input type="hidden" id="tanggal" name="tanggal" value="<?php echo $row['tanggal']; ?>">
+                    <button class="btn btn-primary" onclick="location.href='../penjualan.php'">Kembali</button>
                     <input type="submit" name="submit" value="Simpan Perubahan" class="btn btn-success">
                 </form>
-                <button class="btn btn-primary" onclick="location.href='../penjualan.php'">Kembali</button>
-                <?php
+                
+        <?php
             } else {
                 echo "Transaksi tidak ditemukan.";
             }
@@ -114,4 +162,5 @@
         ?>
     </div>
 </body>
+
 </html>
