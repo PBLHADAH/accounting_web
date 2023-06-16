@@ -110,7 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="jumlah">Jumlah:</label>
                 <input class="form-control" type="number" name="jumlah">
             </div>
-            <button class="btn btn-primary" type="submit">Add</button>
+            <button class="btn btn-primary" onclick="location.href='../tabel_transaksi_perkulakan.php'">Kembali</button>
+            <button class="btn btn-success" type="submit">Add</button>
         </form>
     </div>
 

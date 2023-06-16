@@ -59,13 +59,54 @@ if (isset($_GET['id_perkulakan'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Perkulakan</title>
+    <title>Edit Perkulakan | Aldyz Cell</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <?php
+  $iconPath = '../index/book2.ico';
+  echo '<link rel="icon" type="image/x-icon" href="' . $iconPath . '">';
+  ?>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+css
+Copy code
+    .container {
+        margin-top: 50px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+</style>
 </head>
 <body>
     <div class="container">
-        <h2>Edit Perkulakan</h2>
+      <br> <h2>Edit Perkulakan</h2>
         <form method="post">
             <input type="hidden" name="id_perkulakan" value="<?php echo $row_perkulakan['id_transaksi_perkulakan']; ?>">
             <div class="form-group">
