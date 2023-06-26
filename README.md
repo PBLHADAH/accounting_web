@@ -17,7 +17,7 @@ https://app.diagrams.net/#G1G1P5s9XMpCqBuUTJ9Lf_wW0a-ZAyGh_O
 10. Rpp ✅
 https://docs.google.com/document/d/1IkFVsmV09c9UJ20VXRo8iBKQXLgRSPKhuO2v_tlaSXk/edit#
 11. Laporan Akhir ✅
-https://docs.google.com/document/d/1CRcbeVe_Eh2O4blYHSAvgczBXrFk3-mIxtlp7_PC1Qg/edit
+https://docs.google.com/document/d/1adM4NaE99gjXRWZDDXflO3q_WAMhc-pkejCLFrUPd74/edit?usp=sharing
 12. PPT ✅
 https://www.canva.com/design/DAFk7CNzyUg/uL-SSAkILkq2Atl4SPMNXw/edit
 
